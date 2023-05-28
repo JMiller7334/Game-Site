@@ -1,0 +1,293 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap');
+
+/*VARIABLES*/
+$navColorMain: rgba(27, 25, 25, 0.55);
+$navColorSolid: #171717;
+$navButtonColor: rgba(0, 0, 0, 0.75);
+$navButtonColorAlpha: rgba(0, 0, 0, 0);
+$navColorSeccondary: rgba(255, 255, 255, 1);
+$navAccent: rgb(66, 172, 254);
+
+/*font syntax
+    'Roboto', sans-serif;
+    'Caveat', cursive;
+
+    'Permanent Marker', cursive;
+    'Ubuntu', sans-serif;
+    'Ubuntu Condensed', sans-serif;
+*/
+
+$navFontMain: 'Ubuntu', sans-serif;
+$navFontSecondary: 'Permanent Marker', cursive;
+$navFontCondensed: 'Ubuntu Condensed', sans-serif;
+
+$navFontColor: white;
+$navFontSize: 20px;
+$sidebarFontSize: 25px;
+
+/* NAV MENU */
+nav{
+    z-index: 104;
+    background-color: $navColorSolid;
+    display: grid;
+    grid-template-columns: 1fr, 1fr;   //2fr, 1f;
+    grid-template-rows: 7vh;
+    grid-template-areas: 'main-nav game-info-nav';
+
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    align-items: center;
+
+    .nav-button-container{
+        grid-area: main-nav;
+        display: flex;
+        gap: 10px;
+        //width:100%;
+        height: 100%;
+
+        align-items: center;
+
+        .nav-logo-container{
+            background-color: rgb(144, 3, 3);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 0.25vh 0.5vh 0.25vh 0.5vh;
+            width: 12vh;
+            height: 100%;
+            margin-right: 20px;
+
+            img{
+                height: 90%;
+                width: auto;
+                filter: invert(100%);
+            }
+        }
+    }
+    #nav-game-info{
+        grid-area: game-info-nav
+    }
+
+    #navButton {
+        font-family: $navFontCondensed;
+        font-size: 1rem;
+        padding: 0;
+        height: 40px;
+        width: 7vw;
+        color: $navFontColor;
+        background-color: $navButtonColorAlpha;
+        border-radius: 2px;
+        border: 0px solid $navFontColor;
+
+        &:hover {
+            transition-duration: 0.25s;
+            background-color: $navButtonColorAlpha;
+            //color: $navAccent;
+            transform: scale(1.1);
+            border: 2px solid $navFontColor;
+        }
+    }
+}
+
+/* SIDEBAR MENU */
+#buttonToggleSidebar {
+    z-index: 105;
+    font-family: $navFontCondensed;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    right: 2vw;
+    font-size: 1rem;
+    height: 40px;
+    width: 9vw;
+    color: $navColorSeccondary;
+    background-color: $navButtonColorAlpha;
+    text-align: center;
+    border: 0px solid $navColorSeccondary;
+    transition: 0.25s;
+    &:hover{
+        border: 2px solid $navAccent;
+        color: $navAccent;
+    }
+}
+
+.sidebar {
+    z-index: 100;
+    position: fixed;
+    height: 100vh;
+    width: 0;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: $navColorMain;
+    backdrop-filter: blur(5px);
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s; /* total aimation time */
+
+    h1{
+        margin-top: 30px;
+        color: $navFontColor;
+        font-family: $navFontSecondary;
+        font-size: 40px;
+        width: 88%;
+        text-align:center;
+    }
+    p{
+        color: $navFontColor;
+        font-family: $navFontMain;
+        font-size: $sidebarFontSize;
+        line-height: 30px;
+        text-align: left;
+        padding: 20px;
+    }
+    .sidebarFooter{
+        border: 2px solid red;
+        font-family: $navFontMain;
+        color: $navFontColor;
+        padding-top: 0;
+        font-size: 15px;
+        text-align: right;
+
+        width: 95%;
+     }
+}
+
+
+footer{
+    //ANIMATION//
+    //opacity: 0;
+    //animation: animNavFade 0.5s linear 3.2s 1 normal forwards;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 'social';
+
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+
+    width: auto;
+    height: 7vh;
+    min-height: 50px;
+    z-index: 110;
+    margin-left: 10px;
+    //pointer-events: none;
+
+    .footerInfoContainer { // not used right now.
+        grid-area: info;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        gap:20px;
+        margin: 10px;
+        p {
+            text-align: center;
+            font-family: $navFontMain;
+            color: $navFontColor;
+        }
+    }
+
+    .footerSocialContainer {
+        grid-area: social;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        gap:20px;
+        margin: 10px;
+
+        p {
+            text-align: center;
+            font-family: $navFontMain;
+            color: $navFontColor;
+        }
+
+        button{
+            border: 0;
+            outline: 0;
+            color: $navButtonColor;
+            font-family: $navFontMain;
+            font-size: 25px;
+            width: 40px;
+            margin: 2px 0.5em;
+
+            &:hover {
+                transition-duration: 0.25s;
+                color: $navAccent;
+                transform: skewY(-15deg);
+            }
+        }
+    }
+}
+
+ /* RESPONSIVE -- MOBILE DESIGN */
+@media only screen and (max-width: 900px){
+    nav {
+        height: auto;
+        background-color: $navColorSolid;
+        width: 100vw;
+        #navButton {
+            height: auto;
+            margin: 5px;
+            font-size: 15px;
+            width: 80px;
+            border-radius: 7px;
+        }
+    }
+
+    footer{
+        left: 0%;
+        display: grid;
+        width: 100vw;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 'social';
+        background-color: $navColorSolid;
+        opacity: 1;
+        //backdrop-filter: blur(5px);
+        height: 50px;
+        margin-left: 0;
+    }
+
+    #buttonToggleSidebar {
+        z-index: 117;
+        transform: rotate(90deg);
+        font-size: 15px;
+        top: 50vh;
+        right: -80.5px;
+        border-radius: 0px 0px 20px 20px;
+        width: 180px;
+
+        &:hover {
+            border: 0px;
+        }
+    }
+    .sidebar{
+        top: 0; //4vh
+        height: 100vh; //92vh
+        backdrop-filter: blur(5px);
+
+        h1 {
+            text-align: left;
+            font-size: 23px;
+        }
+        p{
+            font-size: 15px;
+            line-height: 25px;
+        }
+    }
+}
+
