@@ -36,6 +36,16 @@ $bgColor: #171717;
         opacity: 1;
     }
 }
+
+@keyframes anim-disappear-returnButton {
+    0%{
+        opacity: 1;
+    }100%{
+        opacity: 0;
+        display: none;
+    }
+}
+
 //animations//
 @keyframes anim-slide {
     100%{
@@ -70,6 +80,38 @@ body{
     overflow-y: auto;
     overflow-x: hidden;
     background-color: $bgColor;
+}
+
+.return-button{
+    z-index: 200;
+    display: none;
+    position: fixed;
+    bottom: 6vh;
+    right: 25px;
+
+    animation: intro-animFade 0.7s linear 0s 1 normal forwards;
+    opacity: 0;
+
+
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border: 3.5px solid $accent;
+    border-radius: 30px;
+
+    i{
+        background-color: transparent;
+        color: $accent;
+        &:hover {
+            transition-duration: 0.25s;
+            color: $fontColor;
+        }
+    }
+    &:hover {
+        transition-duration: 0.25s;
+        border-color: $fontColor;
+        transform: scale(1.2);
+    }
 }
 
 #copyright-statement{
@@ -352,8 +394,7 @@ body{
                     height: 100%;
                     padding: 0px 0px;
                     padding-right: 10px;
-                }
-    
+                }    
                 img{
                     grid-area: img;
                 }
@@ -415,6 +456,12 @@ body{
 
     nav{
         transform: translateZ(0px) scale(1);
+    }
+
+    .return-button{
+        background-color: transparent;
+        bottom: 5vh;
+        right: 5%;
     }
 
     body{

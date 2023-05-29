@@ -653,6 +653,15 @@ footer .footerSocialContainer button:hover {
     opacity: 1;
   }
 }
+@keyframes anim-disappear-returnButton {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
 @keyframes anim-slide {
   100% {
     left: 0;
@@ -683,6 +692,34 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   background-color: #171717;
+}
+
+.return-button {
+  z-index: 200;
+  display: none;
+  position: fixed;
+  bottom: 6vh;
+  right: 25px;
+  animation: intro-animFade 0.7s linear 0s 1 normal forwards;
+  opacity: 0;
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  border: 3.5px solid rgb(66, 172, 254);
+  border-radius: 30px;
+}
+.return-button i {
+  background-color: transparent;
+  color: rgb(66, 172, 254);
+}
+.return-button i:hover {
+  transition-duration: 0.25s;
+  color: white;
+}
+.return-button:hover {
+  transition-duration: 0.25s;
+  border-color: white;
+  transform: scale(1.2);
 }
 
 #copyright-statement p {
@@ -969,6 +1006,11 @@ body {
 @media only screen and (min-width: 900px), only screen and (orientation: landscape) {
   nav {
     transform: translateZ(0px) scale(1);
+  }
+  .return-button {
+    background-color: transparent;
+    bottom: 5vh;
+    right: 5%;
   }
   body {
     overflow: hidden;

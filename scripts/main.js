@@ -5,6 +5,7 @@ It also handles clearing the pages intro content after it has been played.
  */
 
 let menuOpen = false;
+let introPlayed = false;
 //SIDEBAR STUFF//
 /*This code drags/moves the sidebar out onto the page. */
 function toggleSidebar() {
@@ -115,6 +116,49 @@ contentContainer.addEventListener("animationend", (event) => {
         console.log("jsMain: removing introContainer")
         if (document.getElementById("introContainer")){
             document.getElementById("introContainer").remove();
+            introPlayed = true;
         }
     }
  });
+
+ //RETURN BUTTON
+ let returnButton = document.getElementById("returnButton");
+ window.onscroll = function() {
+   onScroll();
+ };
+ contentContainer.onscroll = function(){
+    onScroll();
+ }
+ 
+function onScroll() {
+    let targetPosition = window.innerHeight/2; // Position to show the button (e.g., 100vh)
+    if (contentContainer.scrollTop > targetPosition || document.documentElement.scrollTop > targetPosition) {
+        // Clear any existing animation styles
+        returnButton.style.animation = '';
+        // Set new animation properties
+        returnButton.style.animationName = 'intro-animFade';
+        returnButton.style.animationDuration = '0.7s';
+        returnButton.style.animationTimingFunction = 'ease-in-out';
+        
+        
+        returnButton.style.display = "block";
+    } else {
+        //returnButton.style.display = "none";
+        // Clear any existing animation styles
+        returnButton.style.animation = '';
+        
+        // Set new animation properties
+        returnButton.style.animationName = 'anim-disappear-returnButton';
+        returnButton.style.animationDuration = '0.7s';
+        returnButton.style.animationTimingFunction = 'ease-in-out';
+    }
+}
+ 
+function scroll2top() {
+    // For Safari, Chrome, Firefox, IE, and Opera
+    document.body.scrollIntoView({ behavior: 'smooth' });
+    document.documentElement.scrollIntoView({ behavior: 'smooth' });
+     
+    // If you have a specific container element you want to scroll to the top
+    contentContainer.scrollTo({ top: 0, behavior: 'smooth' });
+}
