@@ -16,4 +16,4 @@ Animated intro is loaded in at a low z-index and page the content is brought in 
 the underlying content is removed from the page through javascript.
 
 I reserve all rights to the content of this site; all content was created by me.
-Copyright Jacob Miller. All rights reserved.
+Copyright Jacob Miller 2023. All rights reserved.
