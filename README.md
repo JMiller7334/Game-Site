@@ -9,8 +9,8 @@ Animated intro is handled by CSS animations; Javascript removes the intro conten
 
 Navbar sizing is handled by Javascript, this solution is necessary due to css position property of fixed not working within
 a div that uses the perspective property. This created the need for the navbar to be placed outside the div responsible
-for page scrolling - which is the parallax container/wrapper. - This was conflict of using css only parallax and navbar 
-clipping overtop of the parallax container scrollbar.
+for page scrolling(which is the parallax container/wrapper) This was a conflict of using css only parallax which caused the navbar 
+to clip overtop of the parallax container scrollbar.
 
 Animated intro is loaded in at a low z-index and page the content is brought in over top to create a smooth transition
 the underlying content is removed from the page through javascript.
