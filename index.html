@@ -21,40 +21,40 @@
         <div class="galleryContainer" id="galleryContainer">
             <div class="row" id="top">
                 <div class="overlay" id="row-left"></div>
-                <img src="img/intro/BftbPromo.PNG" id="row-left">
+                <img src="img/intro/BftbPromo.jpg" id="row-left">
 
                 <div class="overlay" id="row-center"></div>
-                <img src="img/intro/PhoenixPromo.PNG" id="row-center" class="img-0pan">
+                <img src="img/intro/PhoenixPromo.jpg" id="row-center" class="img-0pan">
 
                 <div class="overlay" id="row-right"></div>
-                <img src="img/intro/SoaringSkyPromo2.PNG" id="row-right" class="img-0pan">
+                <img src="img/intro/SoaringSkyPromo2.jpg" id="row-right" class="img-0pan">
             </div>
     
             <div class="row" id="mid1">
                 <div class="overlay" id="row-left"></div>
-                <img src="img/intro/ReaperPromo.PNG" id="row-left">
+                <img src="img/intro/ReaperPromo.jpg" id="row-left">
 
                 <div class="overlay" id="row-center"></div>
-                <img src="img/intro/TreeHouse.PNG" id="row-center">
+                <img src="img/intro/TreeHouse.jpg" id="row-center">
 
                 <div class="overlay" id="row-right"></div>
-                <img src="img/intro/Parkinglot.PNG" id="row-right">
+                <img src="img/intro/Parkinglot.jpg" id="row-right">
             </div>
     
             <div class="row" id="mid2">
                 <div class="overlay" id="row-left"></div>
-                <img src="img/intro/EndBringerFront.PNG" id="row-left">
+                <img src="img/intro/EndBringerFront.jpg" id="row-left">
 
                 <div class="overlay" id="row-center"></div>
-                <img src="img/intro/parkWyvernFront.PNG" id="row-center">
+                <img src="img/intro/parkWyvernFront.jpg" id="row-center">
 
                 <div class="overlay" id="row-right"></div>
-                <img src="img/intro/CliffHangerFront.PNG" id="row-right" class="img-0pan">
+                <img src="img/intro/CliffHangerFront.jpg" id="row-right" class="img-0pan">
             </div>
     
             <div class="row" id="low">
                 <div class="overlay" id="row-left"></div>
-                <img src="img/intro/CliffHangerFront.PNG" id="row-left" class="img-0pan">
+                <img src="img/intro/CliffHangerFront.jpg" id="row-left" class="img-0pan">
                 <!--row low is not used in desktop/PC-->
             </div>
         </div>
@@ -66,32 +66,21 @@
                     <div class="nav-logo-container">
                         <img src="img/vectors/vectorGameLogo.svg">
                     </div>
-                    <button id="navButton" >Home</button>
-                    <button id="navButton" onclick="location.href='https://jmiller7334.mccdgm.net/web115/sassWebsite/developer'">Developer</button>
+                    <button id="navButton" onclick="location.href='https://www.roblox.com/games/636542147/Theme-Park-Project'">The Game</button>
                 </div>
             
                 <div class="nav-button-container" id="nav-game-info">
                     <button id="buttonToggleSidebar" onclick="toggleSidebar()" class="sidebarButton">&#9776; Game Info</button>
                 </div>
     </nav>
-    <div id="scrollbarMeasure"></div>
 
-    <div class="parallax-container" id="contentContainer">
+    <div class="background">
+            <div class="fill"></div>
+            <img src="img/parallax/ParallaxFull.png">
+    </div>
 
-
-        <div class="parallax-background">
-            <div class="parallax-fill"></div>
-            <img src="img/parallax/parallax_1.png" class="parallax-layer" id="parallax1">
-            <img src="img/parallax/parallax_2.png" class="parallax-layer" id="parallax2">
-            <img src="img/parallax/parallax_3.png" class="parallax-layer" id="parallax3">
-            <img src="img/parallax/parallax_4.png" class="parallax-layer" id="parallax4">
-            <img src="img/parallax/parallax_5.png" class="parallax-layer" id="parallax5">
-            <img src="img/parallax/parallax_6.png" class="parallax-layer" id="parallax6">
-            <img src="img/parallax/parallax_7blue.png" class="parallax-layer" id="parallax7">
-        </div>
-
-        <!-- SIDEBAR MENU -->
-        <div id="sidebarMenu" class="sidebar">
+    <!-- SIDEBAR MENU -->
+    <div id="sidebarMenu" class="sidebar">
         <h1>About</h1>
         <p> Theme Park Project is an online open-world social <br>
         hangout centered around a story taking place in a <br>
@@ -114,244 +103,169 @@
         - Genre: Low-Poly, Story, Social Hangout <br>
         <br>
         - Release: Coming Summer 2023</p>
-        </div>
-
-    <div class="page-main-container">
-        <div class="l-gradient"></div>
-        <div class="r-gradient"></div>
-        
-        <div class="hero-container">
-            <img src="img/coaster_hero.PNG" id="heroRides" alt="hero images">
-            <img src="img/intro/EndBringerFront.PNG" id="heroStory" alt="hero images">
-            <video id="heroFeatures" preload="auto" autoplay="true" loop="loop" muted="muted">
-                <source src="img/GamePromo.mp4" type="video/mp4">
-            </video>
-
-            <div class="lower-gradient" id="heroGradient"></div>
-            <div class="upper-gradient" id="heroGradientUpper"></div>
-
-            <div class="hero-text" id="heroText"></div>
-        </div>
-        <div class="parallax-gradient"></div>
-        <div class="button-container">
-            <button class="notSelected" id="buttonStory" onclick="toggleContent('Story')" 
-            class="sidebarButton">Story</button>
-
-            <button class="notSelected" id="buttonRides" onclick="toggleContent('Rides')" 
-            class="sidebarButton">Rides</button>
-
-            <button class="isSelected" id="buttonFeatures" onclick="toggleContent('Features')"
-            class="sidebarButton">Features</button>
-        </div>
-
-    <!-- STORY CATEGORY -->
-        <div class="category-container" id="categoryStory">
-            <div class="synopsis-container">
-                    <h1>Synopsis</h1>
-                    <p>
-                        Summer break in 2009, you find yourself standing alone on what appears to be a deserted road, waiting for the bus. Your destination? A peculiar theme park situated high in the mountains. This park is known to be the best in the world, but it strikes you as odd that no one seems to remember how or when it came to be. It's as if it has always existed.<br>
-                        <br>
-                        Rumors about a vanished ride, two missing people, and strange unexplainable sightings have haunted this amusement park's history for the past decade. Despite these persistent rumors, no one seems to believe in them.<br>
-                        <br>
-                        However, you have a different plan in mind. You intend to investigate these mysteries and uncover the truth behind them.
-                    </p>
-            </div>
-            
-            <div class="content-container">
-                    <section>
-                        <h1>Main Characters</h1>
-                        <article>
-                            <h2>Kana</h2>
-                            <p>She's a temp-hire working at The Theme Park, known for her quick-wit, intelligence, and love for coffee. As a roller coaster engineer, she's considered to be very good her job.
-                                <br><br>
-                                Despite her professionalism, there seems to be something more that she's searching for at the park.
-                                Perhaps it's the excitement of uncovering something new and unexpected, or maybe she's on a personal mission to discover a hidden truth about the park.
-                            </p>
-                            <img src="img/photo_kana.png" id="photoL" alt="">
-                        </article>
-            
-                        <article>
-                            <h2>Tim</h2>
-                            <p>Tim is the laid-back manager of the ride management team at the park. Known for his easy-going nature and approachable demeanor, he always puts his employees first.
-                                <br><br>
-                                He can often be found in the meeting room, handling paperwork and ensuring everything runs smoothly. He possesses a wealth of knowledge about the park's history and inner workings, but he doesn't always let on about what he knows.
-                            </p>
-                            <img src="img/photo_tim.png" id="photoR" alt="">
-                        </article>
-            
-                        <article>
-                            <h2>Paul</h2>
-                            <p>
-                                Paul is a tired-looking park-goer who was once known for telling tall tales. Though his stories were often dismissed as mere fabrications, rumors persist that he carries a dark secret.
-                                <br><br>
-                                These days, Paul spends his time quietly at the local cafe. His once-energetic demeanor has been replaced by a sense of weariness, and he often seems lost in thought.
-                            </p>
-                            <img src="img/photo_paul.png" id="photoL" alt="">
-                        </article>
-            
-                        <article>
-                            <h2>William</h2>
-                            <p>William was a ride operator who went missing from the park 10 years ago. Despite an extensive investigation, he was never found.
-                                <br><br>
-                                The circumstances surrounding William's disappearance remain a mystery. Some say that he simply wandered off and got lost in the dense forest that surrounds the park, while others believe that it was something more sinister.
-                                <br><br>
-                                Whatever the truth may be, William's disappearance has left a lasting impression on the park and those who knew him.
-                            </p>
-                            <img src="img/photo_William.png" id="photoR" alt="">
-                        </article>
-
-                        <article>
-                            <!--<h2></h2>-->
-                            <!--<p> </p>-->
-                            <!--<img src="" id="photoR" alt="">-->
-                        </article>
-
-                        <article id="copyright-statement">
-                            <p>© 2023 Jacob Miller. All Rights Reserved.</p>
-                        </article>
-            
-                    </section>
-            </div>
     </div>
 
-    <!-- RIDE CATEGORY -->
-    <div class="category-container" id="categoryRides">
-        <div class="synopsis-container">
-                <h1>Roller Coasters</h1>
-                <p>
-                    Theme Park Project boasts a number of exhilarating virtual roller coasters that are sure to leave players on the edge of their seats. As they ride these coasters, players can accumulate a ridescore, which keeps track of the number of rides they've taken. The higher the ridescore, the greater the rewards, including in-game prizes, and the opportunity to compete for a top spot on the leaderboard.
-                </p>
-        </div>
+    <div class="page-main-container" id="contentContainer">
+            <div class="l-gradient"></div>
+            <div class="r-gradient"></div>
             
-        <div class="content-container">
-                <section>
-                    <!--<h1>Roller Coasters</h1> -->
-                    <article>
-                        <h2>Cliff Diver</h2>
-                        <p>
-                            Perched atop a towering canyon, Cliff Diver reigns as the park's tallest roller coaster, boasting a vertigo-inducing steep drop. Riders will experience an adrenaline-fueled rush as they hurtle down the coaster's first drop, descending a waterfall and into two consecutive inversions.
-                        </p>
-                        <img src="img/coaster_cliffHanger.png" id="photoL" alt="">
-                    </article>
-        
-                    <article>
-                        <h2>Hurricane</h2>
-                        <p>
-                            Hurricane is an exceedingly rare prototype coaster that provides a smooth and safe ride. What sets Hurricane apart from other coasters is its intensity. The sudden transitions and quick pacing create an adrenaline-fueled ride that will leave even the most experienced coaster enthusiasts breathless.
-                        </p>
-                        <img src="img/coaster_hurricane.png" id="photoR" alt="">
-                    </article>
-        
-                    <article>
-                        <h2>Taboo</h2>
-                        <p>
-                            Taboo is a launch roller coaster that surrounds the resort's parking lot and spans the Central Area and Beachside District. The coaster launches riders up and over the resort building before plummeting them down into the jungle below, providing a thrilling ride experience with stunning views.
-                        </p>
-                        <img src="img/coaster_taboo.png" id="photoL" alt="">
-                    </article>
-        
-                    <article>
-                        <h2>Wyvern</h2>
-                        <p>
-                            Wyvern is an inverted coaster that takes riders on a thrilling journey through a castle on the outskirts of the park. The coaster is well-known for its nine inversions, which provide a heart-pumping ride experience.
-                            <br><br>
-                            Rumor has it that the coaster was built exceedingly fast due to the sudden disappearance of another ride. Despite the mysterious circumstances surrounding its construction, Wyvern has become a fan favorite among coaster enthusiasts.
+            <div class="hero-container">
+                <img src="img/coaster_hero.jpg" id="heroRides" alt="hero images">
+                <img src="img/intro/EndBringerFront.jpg" id="heroStory" alt="hero images">
+                <video id="heroFeatures" preload="auto" autoplay="true" loop="loop" muted="muted">
+                    <source src="img/GamePromo.mp4" type="video/mp4">
+                </video>
 
-                        </p>
-                        <img src="img/coaster_wyvern.png" id="photoR" alt="">
-                    </article>
+                <div class="lower-gradient" id="heroGradient"></div>
+                <div class="upper-gradient" id="heroGradientUpper"></div>
 
-                    <article>
-                        <h2>End Bringer</h2>
-                        <p>The Theme Park's classic roller coaster and the oldest standing ride at the park. End Bringer spans almost the entire length of the park. The coaster
-                            takes riders from the Central Square to the Beachside District where riders are taken high above the sea below.
-                            <br><br>
-                            Featuring 6 inversions End bringer is known for it's iconic interlocking loops and winding corkscrews. Over the years the roller coaster has 
-                            become a fan favorite among coaster enthusiasts and casual park-goers alike.
-                        </p>
-                        <img src="img/coaster_endBringer.png" id="photoR" alt="">
-                    </article>
-
-                    <article>
-                        <h2>Unlockable Rides</h2>
-                        <p>Some of the most exciting roller coasters aren't accessible right from the start. As players progress through the story and increase their ride score, they'll unlock new areas and gain access to even more exciting coasters.
-                        </p>
-                        <img src="img/coaster_unlock.png" id="photoL" alt="">
-                    </article>
-
-                    <article>
-                        <!--<h2></h2>-->
-                        <!--<p> </p>-->
-                        <!--<img src="" id="photoR" alt="">-->
-                    </article>
-
-                    <!-- COPYRIGHT STATMENT -->
-                    <article id="copyright-statement">
-                        <p>© 2023 Jacob Miller. All Rights Reserved.</p>
-                    </article>
-        
-                </section>
+                <div class="hero-text" id="heroText"></div>
             </div>
+            <div class="parallax-gradient"></div>
+            <div class="button-container">
+                <button class="notSelected" id="buttonStory" onclick="toggleContent('Story')" 
+                class="sidebarButton">Story</button>
+
+                <button class="notSelected" id="buttonRides" onclick="toggleContent('Rides')" 
+                class="sidebarButton">Rides</button>
+
+                <button class="isSelected" id="buttonFeatures" onclick="toggleContent('Features')"
+                class="sidebarButton">Features</button>
+            </div>
+
+        <!-- STORY CATEGORY -->
+            <div class="category-container" id="categoryStory">
+                <div class="synopsis-container">
+                        <h1>Synopsis</h1>
+                        <p>
+                            Summer break in 2009, you find yourself standing alone on what appears to be a deserted road, waiting for the bus. Your destination? A peculiar theme park situated high in the mountains. This park is known to be the best in the world, but it strikes you as odd that no one seems to remember how or when it came to be. It's as if it has always existed.<br>
+                            <br>
+                            Rumors about a vanished ride, two missing people, and strange unexplainable sightings have haunted this amusement park's history for the past decade. Despite these persistent rumors, no one seems to believe in them.<br>
+                            <br>
+                            However, you have a different plan in mind. You intend to investigate these mysteries and uncover the truth behind them.
+                        </p>
+                </div>
+                
+                <div class="content-container">
+                        <section>
+                            <h1>Main Characters</h1>
+                            <article>
+                                <h2>Kana</h2>
+                                <p>She's a temp-hire working at The Theme Park, known for her quick-wit, intelligence, and love for coffee. As a roller coaster engineer, she's considered to be very good her job.
+                                    <br><br>
+                                    Despite her professionalism, there seems to be something more that she's searching for at the park.
+                                    Perhaps it's the excitement of uncovering something new and unexpected, or maybe she's on a personal mission to discover a hidden truth about the park.
+                                </p>
+                                <img src="img/photo_kana.jpg" id="photoL" alt="">
+                            </article>
+                
+                            <article>
+                                <h2>Tim</h2>
+                                <p>Tim is the laid-back manager of the ride management team at the park. Known for his easy-going nature and approachable demeanor, he always puts his employees first.
+                                    <br><br>
+                                    He can often be found in the meeting room, handling paperwork and ensuring everything runs smoothly. He possesses a wealth of knowledge about the park's history and inner workings, but he doesn't always let on about what he knows.
+                                </p>
+                                <img src="img/photo_tim.jpg" id="photoR" alt="">
+                            </article>
+                
+                            <article>
+                                <h2>Paul</h2>
+                                <p>
+                                    Paul is a tired-looking park-goer who was once known for telling tall tales. Though his stories were often dismissed as mere fabrications, rumors persist that he carries a dark secret.
+                                    <br><br>
+                                    These days, Paul spends his time quietly at the local cafe. His once-energetic demeanor has been replaced by a sense of weariness, and he often seems lost in thought.
+                                </p>
+                                <img src="img/photo_paul.jpg" id="photoL" alt="">
+                            </article>
+                
+                            <article>
+                                <h2>William</h2>
+                                <p>William was a ride operator who went missing from the park 10 years ago. Despite an extensive investigation, he was never found.
+                                    <br><br>
+                                    The circumstances surrounding William's disappearance remain a mystery. Some say that he simply wandered off and got lost in the dense forest that surrounds the park, while others believe that it was something more sinister.
+                                    <br><br>
+                                    Whatever the truth may be, William's disappearance has left a lasting impression on the park and those who knew him.
+                                </p>
+                                <img src="img/photo_William.jpg" id="photoR" alt="">
+                            </article>
+
+                            <article>
+                                <!--<h2></h2>-->
+                                <!--<p> </p>-->
+                                <!--<img src="" id="photoR" alt="">-->
+                            </article>
+
+                            <article id="copyright-statement">
+                                <p>© 2023 Jacob Miller. All Rights Reserved.</p>
+                            </article>
+                
+                        </section>
+                </div>
         </div>
 
-    <!-- FEATURES CATEGORY -->
-        <div class="category-container" id="categoryFeatures">
+        <!-- RIDE CATEGORY -->
+        <div class="category-container" id="categoryRides">
             <div class="synopsis-container">
-                <h1>More Than a Theme Park</h1>
-                <p>
-                    Theme Park Project offers a vast and imaginative world, featuring a dynamic day/night cycle and interactive NPCs that bring the park to life. With items to collect, leaderboards to climb, and a captivating 3-chapter story to uncover the mysterious secrets of the park. There's never a dull moment. 
-                    <br><br>
-                    Players can also fish with friends and enjoy the many unique attractions. Immerse yourself in the lore of Theme Park Project, which includes its own books, and make your mark with customizable titles and player-owned housing. With hours of gameplay, each visit to the park is sure to leave players with something new to discover. 
-                </p>
-        </div>            
+                    <h1>Roller Coasters</h1>
+                    <p>
+                        Theme Park Project boasts a number of exhilarating virtual roller coasters that are sure to leave players on the edge of their seats. As they ride these coasters, players can accumulate a ridescore, which keeps track of the number of rides they've taken. The higher the ridescore, the greater the rewards, including in-game prizes, and the opportunity to compete for a top spot on the leaderboard.
+                    </p>
+            </div>
+                
             <div class="content-container">
                     <section>
-                        <!--<img src="img/bus_stop.png" id="banner" alt="">-->
-                        <article id="featureItem">
-                            <h2>Explore</h2>
-                            <p>Embark on an epic journey through the world of Theme Park Project, filled with zones and locations just waiting to be explored. Whether you're searching for hidden secrets or simply seeking to relax, this adventure-packed game has something for everyone. 
+                        <!--<h1>Roller Coasters</h1> -->
+                        <article>
+                            <h2>Cliff Diver</h2>
+                            <p>
+                                Perched atop a towering canyon, Cliff Diver reigns as the park's tallest roller coaster, boasting a vertigo-inducing steep drop. Riders will experience an adrenaline-fueled rush as they hurtle down the coaster's first drop, descending a waterfall and into two consecutive inversions.
                             </p>
-                            <img src="img/vectors/vectorExplore.svg" id="vectorImg" alt="">
+                            <img src="img/coaster_cliffHanger.jpg" id="photoL" alt="">
                         </article>
-
-                        <article id="featureItem">
-                            <h2>Your Own Home</h2>
-                            <p>Create your dream living space in the game! Customize everything from the walls to the floors and furniture, you can truly make it your own. 
+            
+                        <article>
+                            <h2>Hurricane</h2>
+                            <p>
+                                Hurricane is an exceedingly rare prototype coaster that provides a smooth and safe ride. What sets Hurricane apart from other coasters is its intensity. The sudden transitions and quick pacing create an adrenaline-fueled ride that will leave even the most experienced coaster enthusiasts breathless.
+                            </p>
+                            <img src="img/coaster_hurricane.jpg" id="photoR" alt="">
+                        </article>
+            
+                        <article>
+                            <h2>Taboo</h2>
+                            <p>
+                                Taboo is a launch roller coaster that surrounds the resort's parking lot and spans the Central Area and Beachside District. The coaster launches riders up and over the resort building before plummeting them down into the jungle below, providing a thrilling ride experience with stunning views.
+                            </p>
+                            <img src="img/coaster_taboo.jpg" id="photoL" alt="">
+                        </article>
+            
+                        <article>
+                            <h2>Wyvern</h2>
+                            <p>
+                                Wyvern is an inverted coaster that takes riders on a thrilling journey through a castle on the outskirts of the park. The coaster is well-known for its nine inversions, which provide a heart-pumping ride experience.
                                 <br><br>
-                                Earn upgrades by paying off your debts and transform your humble abode into a coveted mansion. Let your creativity run wild and design the perfect home for your virtual adventures!</p>
-                            <img src="img/vectors/vectorHome.svg" id="vectorImg" alt="">
+                                Rumor has it that the coaster was built exceedingly fast due to the sudden disappearance of another ride. Despite the mysterious circumstances surrounding its construction, Wyvern has become a fan favorite among coaster enthusiasts.
+
+                            </p>
+                            <img src="img/coaster_wyvern.jpg" id="photoR" alt="">
                         </article>
 
-                        <article id="featureItem">
-                            <h2>Customize</h2>
-                            <p>Choose from a wide range of unique titles to customize your character and stand out from the crowd. Not only that, but you can also switch up your in-game deployable rest chair to relax in style and comfort. 
+                        <article>
+                            <h2>End Bringer</h2>
+                            <p>The Theme Park's classic roller coaster and the oldest standing ride at the park. End Bringer spans almost the entire length of the park. The coaster
+                                takes riders from the Central Square to the Beachside District where riders are taken high above the sea below.
                                 <br><br>
-                                With unlimited customization options available, Theme Park Project offers endless possibilities to express yourself and play the game your way.</p>
-                            <img src="img/vectors/vectorCustomize.svg" id="vectorImg" alt="">
+                                Featuring 6 inversions End bringer is known for it's iconic interlocking loops and winding corkscrews. Over the years the roller coaster has 
+                                become a fan favorite among coaster enthusiasts and casual park-goers alike.
+                            </p>
+                            <img src="img/coaster_endBringer.jpg" id="photoR" alt="">
                         </article>
 
-                        <article id="featureItem">
-                            <h2>Deliver</h2>
-                            <p>Deliver important letters to the park's visitors while exploring the vast surroundings.
-                                <br><br> 
-                                Whether you're a casual player or a dedicated completionist, the postman job is a unique and exciting way to earn in-game currency and become a part of the park's community.</p>
-                            <img src="img/vectors/vectorLetter.svg" id="vectorImg" alt="">
-                        </article>
-
-                        <article id="featureItem">
-                            <h2>Repair</h2>
-                            <p>Ascend to new heights as you scale towering attractions to keep them in top condition. Traverse catwalks and ladders to repair and maintain roller coasters, ferris wheels, and other thrilling rides. 
-                                <br><br>
-                                Earning in-game currency with each successful repair, you'll ensure the park remains a safe and exciting destination for all visitors.</p>
-                            <img src="img/vectors/vectorWrench.svg" id="vectorImg" alt="">
-                        </article>
-
-                        <article id="featureItem">
-                            <h2>Clean</h2>
-                            <p>Theme Park Project is under attack by a mysterious vandal known only as 'The Painter.' Take matters into your own hands and fight back against their graffiti by cleaning up the park and restoring it to its glory. 
-                                <br><br>
-                                Not only will you be saving the park, but you'll also earn valuable in-game currency for your efforts.</p>
-                            <img src="img/vectors/vectorGraffiti.svg" id="vectorImg" alt="">
+                        <article>
+                            <h2>Unlockable Rides</h2>
+                            <p>Some of the most exciting roller coasters aren't accessible right from the start. As players progress through the story and increase their ride score, they'll unlock new areas and gain access to even more exciting coasters.
+                            </p>
+                            <img src="img/coaster_unlock.jpg" id="photoL" alt="">
                         </article>
 
                         <article>
@@ -364,30 +278,102 @@
                         <article id="copyright-statement">
                             <p>© 2023 Jacob Miller. All Rights Reserved.</p>
                         </article>
+            
                     </section>
+                </div>
             </div>
-    </div>
+
+        <!-- FEATURES CATEGORY -->
+            <div class="category-container" id="categoryFeatures">
+                <div class="synopsis-container">
+                    <h1>More Than a Theme Park</h1>
+                    <p>
+                        Theme Park Project offers a vast and imaginative world, featuring a dynamic day/night cycle and interactive NPCs that bring the park to life. With items to collect, leaderboards to climb, and a captivating 3-chapter story to uncover the mysterious secrets of the park. There's never a dull moment. 
+                        <br><br>
+                        Players can also fish with friends and enjoy the many unique attractions. Immerse yourself in the lore of Theme Park Project, which includes its own books, and make your mark with customizable titles and player-owned housing. With hours of gameplay, each visit to the park is sure to leave players with something new to discover. 
+                    </p>
+            </div>            
+                <div class="content-container">
+                        <section>
+                            <!--<img src="img/bus_stop.png" id="banner" alt="">-->
+                            <article id="featureItem">
+                                <h2>Explore</h2>
+                                <p>Embark on an epic journey through the world of Theme Park Project, filled with zones and locations just waiting to be explored. Whether you're searching for hidden secrets or simply seeking to relax, this adventure-packed game has something for everyone. 
+                                </p>
+                                <img src="img/vectors/vectorExplore.svg" id="vectorImg" alt="">
+                            </article>
+
+                            <article id="featureItem">
+                                <h2>Your Own Home</h2>
+                                <p>Create your dream living space in the game! Customize everything from the walls to the floors and furniture, you can truly make it your own. 
+                                    <br><br>
+                                    Earn upgrades by paying off your debts and transform your humble abode into a coveted mansion. Let your creativity run wild and design the perfect home for your virtual adventures!</p>
+                                <img src="img/vectors/vectorHome.svg" id="vectorImg" alt="">
+                            </article>
+
+                            <article id="featureItem">
+                                <h2>Customize</h2>
+                                <p>Choose from a wide range of unique titles to customize your character and stand out from the crowd. Not only that, but you can also switch up your in-game deployable rest chair to relax in style and comfort. 
+                                    <br><br>
+                                    With unlimited customization options available, Theme Park Project offers endless possibilities to express yourself and play the game your way.</p>
+                                <img src="img/vectors/vectorCustomize.svg" id="vectorImg" alt="">
+                            </article>
+
+                            <article id="featureItem">
+                                <h2>Deliver</h2>
+                                <p>Deliver important letters to the park's visitors while exploring the vast surroundings.
+                                    <br><br> 
+                                    Whether you're a casual player or a dedicated completionist, the postman job is a unique and exciting way to earn in-game currency and become a part of the park's community.</p>
+                                <img src="img/vectors/vectorLetter.svg" id="vectorImg" alt="">
+                            </article>
+
+                            <article id="featureItem">
+                                <h2>Repair</h2>
+                                <p>Ascend to new heights as you scale towering attractions to keep them in top condition. Traverse catwalks and ladders to repair and maintain roller coasters, ferris wheels, and other thrilling rides. 
+                                    <br><br>
+                                    Earning in-game currency with each successful repair, you'll ensure the park remains a safe and exciting destination for all visitors.</p>
+                                <img src="img/vectors/vectorWrench.svg" id="vectorImg" alt="">
+                            </article>
+
+                            <article id="featureItem">
+                                <h2>Clean</h2>
+                                <p>Theme Park Project is under attack by a mysterious vandal known only as 'The Painter.' Take matters into your own hands and fight back against their graffiti by cleaning up the park and restoring it to its glory. 
+                                    <br><br>
+                                    Not only will you be saving the park, but you'll also earn valuable in-game currency for your efforts.</p>
+                                <img src="img/vectors/vectorGraffiti.svg" id="vectorImg" alt="">
+                            </article>
+
+                            <article>
+                                <!--<h2></h2>-->
+                                <!--<p> </p>-->
+                                <!--<img src="" id="photoR" alt="">-->
+                            </article>
+
+                            <!-- COPYRIGHT STATMENT -->
+                            <article id="copyright-statement">
+                                <p>© 2023 Jacob Miller. All Rights Reserved.</p>
+                            </article>
+                        </section>
+                </div>
+        </div>
 
 
 
     </div> <!-- page-main-container -->
-    </div> <!-- parallax-container -->
 
     <button class="return-button" id="returnButton" onclick="scroll2top()" >
         <i class="fa-solid fa-arrow-up fa-2x"></i>
     </button>
-
 
     <!-- FOOTER MENU -->
     <footer>
         <div class="footerSocialContainer">
         <!--<button><i class="fa fa-facebook"></i></button>
             <button><i class="fa fa-instagram"></i></button> -->
-            <button><i class="fa fa-twitter"></i></button>
+            <button  onclick="location.href='https://twitter.com/ThemeParkProj'"><i class="fa fa-twitter"></i></button>
             <p>Coming Summer 2023</p>
         </div>
     </footer>
     <script src="scripts/main.js"></script>
-    <script src="scripts/nav.js"></script>
 </body>
 </html>

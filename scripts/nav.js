@@ -8,6 +8,8 @@ with css position:fixed. CSS only parallax provides best performance and compati
 This forces the nav to be placed outside of the main scrolling container. My solution was to 
 calculate the width through js using an off screen div to calc the width of the scroll bar*/
 
+//ONLY USED FOR PARALLAX 
+
 
 const mainNav = document.getElementById('mainNav');
 const scrollbarMeasure = document.getElementById('scrollbarMeasure');

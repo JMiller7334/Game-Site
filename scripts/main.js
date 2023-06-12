@@ -113,10 +113,9 @@ window.matchMedia("orientation: portrait").addEventListener("change", onOrientat
 const contentContainer = document.getElementById("contentContainer");
 contentContainer.addEventListener("animationend", (event) => {
     if (event.animationName === "anim-appear"){
-        console.log("jsMain: removing introContainer")
         if (document.getElementById("introContainer")){
+            console.log("jsMain: removing introContainer");
             document.getElementById("introContainer").remove();
-            introPlayed = true;
         }
     }
  });
@@ -155,10 +154,8 @@ function onScroll() {
 }
  
 function scroll2top() {
+    console.log("jsMain: scroll2top")
     // For Safari, Chrome, Firefox, IE, and Opera
-    document.body.scrollIntoView({ behavior: 'smooth' });
-    document.documentElement.scrollIntoView({ behavior: 'smooth' });
-     
-    // If you have a specific container element you want to scroll to the top
-    contentContainer.scrollTo({ top: 0, behavior: 'smooth' });
+    document.body.scrollIntoView({top: 0, behavior: 'smooth'});
+    document.documentElement.scrollIntoView({top: 0, behavior: 'smooth'});
 }
