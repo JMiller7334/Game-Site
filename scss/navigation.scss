@@ -145,22 +145,14 @@ nav{
     overflow-x: hidden;
     padding-top: 60px;
     transition: 0.5s; /* total aimation time */
-
-    h2{
-        margin-top: 30px;
-        color: $navFontColor;
-        font-family: $navFontSecondary;
-        font-size: 40px;
-        width: 88%;
-        text-align:center;
-    }
-    p{
+    span{
         color: $navFontColor;
         font-family: $navFontMain;
         font-size: $sidebarFontSize;
         line-height: 30px;
         text-align: left;
-        padding: 20px;
+        padding: 5vw;
+
     }
     .sidebarFooter{
         border: 2px solid red;
@@ -306,12 +298,7 @@ a:active {
         top: 0; //4vh
         height: 100vh; //92vh
         backdrop-filter: blur(5px);
-
-        h2 {
-            text-align: left;
-            font-size: 23px;
-        }
-        p{
+        span{
             font-size: 15px;
             line-height: 25px;
         }
