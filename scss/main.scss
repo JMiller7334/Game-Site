@@ -91,6 +91,11 @@ body{
     animation: make-scrollbar 1s linear 4.5s 1 normal both;
 
 }
+
+footer{
+    animation: intro-animFade 0.7s linear 6s 1 normal forwards;
+}
+
 .return-button{
     z-index: 200;
     display: none;

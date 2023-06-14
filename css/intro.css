@@ -149,8 +149,8 @@
        object-position: 70% -50px;
   }
   .intro-wyvern {
-    -o-object-position: 50% -85px;
-       object-position: 50% -85px;
+    -o-object-position: 50% -50px;
+       object-position: 50% -50px;
   }
   .intro-container {
     overflow: visible;
