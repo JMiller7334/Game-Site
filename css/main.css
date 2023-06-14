@@ -746,6 +746,28 @@ body {
   animation: make-scrollbar 1s linear 4.5s 1 normal both;
 }
 
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}
+
+#loadingMsg {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 300;
+  border: 2px solid purple;
+}
+#loadingMsg p {
+  color: white;
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-align: center;
+}
+
 footer {
   animation: intro-animFade 0.7s linear 6s 1 normal forwards;
 }
