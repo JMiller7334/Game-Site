@@ -279,7 +279,7 @@ body{
         margin-top: 0;
         margin-bottom: 50px;
     
-        h1{
+        h1, h2{
             color: $fontColor;
             font-family: $fontSecondary;
             font-size: calc(1rem + 1.5vw);
@@ -326,7 +326,7 @@ body{
     
             //background-color: $colorMain;
     
-            h1{
+            h2, h3{
                 grid-area: topic;
     
                 color: $fontColor;
@@ -358,18 +358,19 @@ body{
                 height: auto;
 
                 margin-bottom: 50px;
-                padding-left: 50px; //was 15 to line up w/header txt
+                padding-left: 25px; //was 15 to line up w/header txt
     
                 display: grid;
                 align-items:center;
                 grid-template-columns: 3fr 2fr;
-                grid-template-rows: 0.75fr 4fr;
+                grid-template-rows: min-content 4fr;
                 grid-template-areas: 
                     "title img"
                     "info img";
     
-                h2{
+                h2, h3, h4{
                     //border: 2px solid yellow;
+                    vertical-align: bottom;
                     grid-area: title;
     
                     color: $fontColor;
@@ -380,8 +381,7 @@ body{
                     grid-column-end: 2;
     
                     width: 95%;
-                    height: min-content;
-                    padding: 1vw 0px;//15px
+                    padding: 0vw 0px;//15px
                 }
                 p{
                     //border: 2px solid yellow;
@@ -391,8 +391,7 @@ body{
                     font-family: $fontCondensed;
     
                     width: 95%;
-                    height: 100%;
-                    padding: 0px 0px;
+                    padding: 5px 1rem;
                     padding-right: 10px;
                 }    
                 img{
@@ -582,3 +581,4 @@ body{
  nav{
     z-index: 200;
  }
+

@@ -67,6 +67,14 @@ nav #navButton:hover {
   transform: scale(1.1);
   border: 2px solid white;
 }
+nav #navButton:hover a {
+  transform: scale(1.1);
+}
+nav #navButton a {
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-decoration: none;
+  color: white;
+}
 
 /* SIDEBAR MENU */
 #buttonToggleSidebar {
@@ -188,6 +196,21 @@ footer .footerSocialContainer button:hover {
   transition-duration: 0.25s;
   color: rgb(66, 172, 254);
   transform: skewY(-15deg);
+}
+footer .footerSocialContainer button:hover a {
+  color: rgb(66, 172, 254);
+}
+footer .footerSocialContainer button a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: white; /* Replace with your desired color value */
+  text-decoration: none;
 }
 
 /* RESPONSIVE -- MOBILE DESIGN */

@@ -93,6 +93,16 @@ nav{
             transform: scale(1.1);
             border: 2px solid $navFontColor;
         }
+
+        &:hover a{
+            transform: scale(1.1);
+        }
+
+        a{
+            font-family: $navFontCondensed;
+            text-decoration: none;
+            color: $navFontColor; 
+        }
     }
 }
 
@@ -229,9 +239,27 @@ footer{
                 color: $navAccent;
                 transform: skewY(-15deg);
             }
+            &:hover a{
+                color: $navAccent;
+            }
+
+            a{
+               text-decoration: none;
+               color: $navButtonColor; 
+            }
         }
     }
 }
+
+//ENSURE ANCHOR TAG COLOR//
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: $navFontColor; /* Replace with your desired color value */
+  text-decoration: none;
+}
+
 
  /* RESPONSIVE -- MOBILE DESIGN */
 @media only screen and (max-width: 900px){

@@ -130,6 +130,14 @@ nav #navButton:hover {
   transform: scale(1.1);
   border: 2px solid white;
 }
+nav #navButton:hover a {
+  transform: scale(1.1);
+}
+nav #navButton a {
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-decoration: none;
+  color: white;
+}
 
 /* SIDEBAR MENU */
 #buttonToggleSidebar {
@@ -251,6 +259,21 @@ footer .footerSocialContainer button:hover {
   transition-duration: 0.25s;
   color: rgb(66, 172, 254);
   transform: skewY(-15deg);
+}
+footer .footerSocialContainer button:hover a {
+  color: rgb(66, 172, 254);
+}
+footer .footerSocialContainer button a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: white; /* Replace with your desired color value */
+  text-decoration: none;
 }
 
 /* RESPONSIVE -- MOBILE DESIGN */
@@ -868,7 +891,7 @@ body {
   margin-top: 0;
   margin-bottom: 50px;
 }
-.category-container .synopsis-container h1 {
+.category-container .synopsis-container h1, .category-container .synopsis-container h2 {
   color: white;
   font-family: "Permanent Marker", cursive;
   font-size: calc(1rem + 1.5vw);
@@ -903,7 +926,7 @@ body {
       "topic ."
       "article article";*/
 }
-.category-container .content-container section h1 {
+.category-container .content-container section h2, .category-container .content-container section h3 {
   grid-area: topic;
   color: white;
   font-family: "Permanent Marker", cursive;
@@ -929,14 +952,15 @@ body {
   width: 100%;
   height: auto;
   margin-bottom: 50px;
-  padding-left: 50px;
+  padding-left: 25px;
   display: grid;
   align-items: center;
   grid-template-columns: 3fr 2fr;
-  grid-template-rows: 0.75fr 4fr;
+  grid-template-rows: min-content 4fr;
   grid-template-areas: "title img" "info img";
 }
-.category-container .content-container section article h2 {
+.category-container .content-container section article h2, .category-container .content-container section article h3, .category-container .content-container section article h4 {
+  vertical-align: bottom;
   grid-area: title;
   color: white;
   font-family: "Permanent Marker", cursive;
@@ -944,17 +968,14 @@ body {
   grid-column-start: 1;
   grid-column-end: 2;
   width: 95%;
-  height: -moz-min-content;
-  height: min-content;
-  padding: 1vw 0px;
+  padding: 0vw 0px;
 }
 .category-container .content-container section article p {
   grid-area: info;
   color: white;
   font-family: "Ubuntu Condensed", sans-serif;
   width: 95%;
-  height: 100%;
-  padding: 0px 0px;
+  padding: 5px 1rem;
   padding-right: 10px;
 }
 .category-container .content-container section article img {
