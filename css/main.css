@@ -753,6 +753,7 @@ body {
 #loadingMsg p {
   color: white;
   font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 25px;
   text-align: center;
 }
 
