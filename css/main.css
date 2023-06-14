@@ -816,7 +816,7 @@ footer {
   font-size: 1em;
   font-family: "Ubuntu Condensed", sans-serif;
   color: white;
-  margin: 0.7em 2rem;
+  margin: 10px 10px;
   opacity: 0;
   animation: intro-animFade 0.7s linear 6s 1 normal forwards;
 }
