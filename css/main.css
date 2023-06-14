@@ -369,6 +369,7 @@ a:active {
   }
 }
 .intro-container {
+  margin-top: 5vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -456,111 +457,123 @@ a:active {
 /* --- RESPONSIVE DESIGN --- */
 /* --- MOBILE SPECIFIC --- */
 @media only screen and (max-width: 900px) {
-  /* IDs ROWS */
-  /* IDs IMGs*/
-}
-@media only screen and (max-width: 900px) and (orientation: landscape) {
-  #gameLogo {
-    margin-top: 15;
-    height: auto;
-    width: 20%;
+  .intro-bftb {
+    -o-object-position: 44% 50%;
+       object-position: 44% 50%;
+  }
+  .intro-pheonix {
+    -o-object-position: 5% 50%;
+       object-position: 5% 50%;
+  }
+  .intro-reaper {
+    -o-object-position: 72%;
+       object-position: 72%;
+  }
+  .intro-treehouse {
+    -o-object-position: 70%;
+       object-position: 70%;
+  }
+  .intro-endbringer {
+    -o-object-position: 70% -50px;
+       object-position: 70% -50px;
+  }
+  .intro-wyvern {
+    -o-object-position: 50% -85px;
+       object-position: 50% -85px;
   }
   .intro-container {
     overflow: visible;
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: auto;
+    height: auto;
   }
   .galleryContainer {
-    scroll-snap-align: center;
-  }
-  .galleryContainer #top {
-    height: 100vh;
-  }
-  .galleryContainer #mid1 {
-    display: none;
-  }
-  .galleryContainer #mid2 {
-    display: none;
-  }
-  .galleryContainer #low {
-    display: none;
-  }
-  .galleryContainer #full {
-    scroll-snap-align: center;
+    overflow: visible;
+    grid-area: main;
     display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 33.5% 33.5% 33.5% auto;
+    grid-template-areas: "top" "mid1" "mid2" "low";
+    row-gap: 0px;
+    -moz-column-gap: 0px;
+         column-gap: 0px;
     height: 100vh;
+    width: 100vw;
+    scroll-snap-align: center;
   }
-}
-@media only screen and (max-width: 900px) {
+  .intro-article h5 {
+    position: absolute;
+  }
   #gameLogo {
+    height: auto;
+    width: 30vh;
     opacity: 0;
-    animation: intro-animFade 0.5s linear 3.5s 1 normal forwards;
+    animation: intro-animFade 0.6s linear 3.5s 1 normal forwards;
   }
-}
-@media only screen and (max-width: 900px) {
   .overlay {
-    animation: intro-animOpacity 0.5s linear 3.2s 1 normal forwards;
+    animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
   }
-}
-@media only screen and (max-width: 900px) {
   #top img {
-    margin: 0px 100%;
-    animation: intro-animSlide 0.5s linear 1.5s 1 normal forwards;
+    margin: 0px 300%;
+    animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
   }
-}
-@media only screen and (max-width: 900px) {
   #mid1 img {
-    margin: 0px 100%;
-    animation: intro-animSlide 0.5s linear 1.75s 1 normal forwards;
+    margin: 0px 300%;
+    animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
   }
-}
-@media only screen and (max-width: 900px) {
   #mid2 img {
-    margin: 0px 100%;
-    animation: intro-animSlide 0.5s linear 2s 1 normal forwards;
+    margin: 0px 300%;
+    animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
   }
-}
-@media only screen and (max-width: 900px) {
-  #low img {
-    margin: 0px 100%;
-    animation: intro-animSlide 0.5s linear 2.25s 1 normal forwards;
+  .intro-container {
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
   }
-}
-@media only screen and (max-width: 900px) {
+  .intro-container .intro-article {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  .intro-container .intro-article img { /*main logo*/
+    margin-bottom: 12vh;
+    width: 17%;
+  }
+  /* IDs ROWS */
   #top {
     grid-area: top;
   }
-}
-@media only screen and (max-width: 900px) {
   #mid1 {
     grid-area: mid1;
   }
-}
-@media only screen and (max-width: 900px) {
   #mid2 {
     grid-area: mid2;
   }
-}
-@media only screen and (max-width: 900px) {
   #low {
-    grid-area: low;
-  }
-}
-@media only screen and (max-width: 900px) {
-  #full {
     display: none;
   }
-}
-@media only screen and (max-width: 900px) {
+  #full {
+    scroll-snap-align: center;
+    height: 100vh;
+    width: 100vw;
+  }
+  /* IDs IMGs*/
   #row-left {
     grid-area: left;
   }
-}
-@media only screen and (max-width: 900px) {
   #row-center {
-    display: none;
+    display: inline;
     grid-area: center;
   }
-}
-@media only screen and (max-width: 900px) {
   #row-right {
     display: none;
     grid-area: right;
@@ -665,6 +678,14 @@ a:active {
     display: inline;
     grid-area: right;
   }
+  .intro-pheonix {
+    -o-object-position: 0%;
+       object-position: 0%;
+  }
+  .intro-soaring {
+    -o-object-position: 50%;
+       object-position: 50%;
+  }
 }
 /*FONTS*/
 /*VARIABLES*/
@@ -743,14 +764,14 @@ body {
   background-color: transparent;
   color: rgb(66, 172, 254);
 }
-.return-button i:hover {
-  transition-duration: 0.25s;
-  color: white;
-}
 .return-button:hover {
   transition-duration: 0.25s;
   border-color: white;
   transform: scale(1.2);
+}
+.return-button:hover i {
+  transition-duration: 0.25s;
+  color: white;
 }
 
 #copyright-statement p {
@@ -826,8 +847,7 @@ body {
   background-image: linear-gradient(#171717, rgba(0, 0, 0, 0));
 }
 .hero-container .lower-gradient {
-  margin-top: 2px;
-  margin-top: 37vh;
+  margin-top: 37.5vh;
   display: none;
   z-index: 11;
   grid-area: hero;
@@ -937,7 +957,10 @@ body {
   height: min-content;
   margin-top: 3vw;
   margin-bottom: 0vw;
-  padding-left: 15px;
+  padding-left: 10px;
+}
+.category-container .content-container section h3 {
+  padding-bottom: 15px;
 }
 .category-container .content-container section #banner {
   border: 2px solid purple;
