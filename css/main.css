@@ -318,10 +318,10 @@ a:active {
 /*FONTS*/
 @keyframes intro-animSlide {
   0% {
-    margin: 0 300%;
+    transform: translateX(300%);
   }
   100% {
-    margin: 0 0%;
+    transform: translateX(0%);
   }
 }
 @keyframes intro-animFade {
@@ -500,15 +500,15 @@ a:active {
     animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
   }
   #top img {
-    margin: 0px 300%;
+    transform: translateX(300%);
     animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
   }
   #mid1 img {
-    margin: 0px 300%;
+    transform: translateX(300%);
     animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
   }
   #mid2 img {
-    margin: 0px 300%;
+    transform: translateX(300%);
     animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
   }
   .intro-container {
@@ -593,15 +593,15 @@ a:active {
     animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
   }
   #top img {
-    margin: 0 300%;
+    transform: translateX(300%);
     animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
   }
   #mid1 img {
-    margin: 0 300%;
+    transform: translateX(300%);
     animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
   }
   #mid2 img {
-    margin: 0 300%;
+    transform: translateX(300%);
     animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
   }
   .intro-container {

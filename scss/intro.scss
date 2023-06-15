@@ -6,10 +6,10 @@
 //ANIMATIONS//
 @keyframes intro-animSlide {//brings in gallery imgs
     0%{
-        margin: 0 300%;
+        transform: translateX(300%);
     }
     100%{
-        margin: 0 0%;
+        transform: translateX(0%);
     }
 }
 @keyframes intro-animFade {//logo and article fade
@@ -78,9 +78,6 @@ $accent: rgba(252, 177, 38, 0.8);
         }
         h5{
             opacity: 0;
-
-            -webkit-animation: intro-animDuelFade 2s linear 0s 1 normal forwards;
-            -moz-animation: intro-animDuelFade 2s linear 0s 1 normal forwards;
             animation: intro-animDuelFade 2s linear 0s 1 normal forwards;
 
             z-index: -11;
@@ -209,38 +206,26 @@ $accent: rgba(252, 177, 38, 0.8);
         height: auto;
         width: 17vh;
         opacity: 0;
-
-        -webkit-animation: intro-animFade 0.6s linear 3.5s 1 normal forwards;
-        -moz-animation: intro-animFade 0.6s linear 3.5s 1 normal forwards;
         animation: intro-animFade 0.6s linear 3.5s 1 normal forwards;
 
         margin-top: -14vh;
     }
     .overlay{
-
-        -webkit-animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
-        -moz-animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
         animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
     }
     #top img{
-        margin: 0px 300%;
-
-        -webkit-animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
-        -moz-animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
+        //margin: 0px 300%;
+        transform: translateX(300%);
         animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
     }
     #mid1 img{
-        margin: 0px 300%;
-
-        -webkit-animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
-        -moz-animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
+        //margin: 0px 300%;
+        transform: translateX(300%);
         animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
     }
     #mid2 img{
-        margin: 0px 300%;
-
-        -webkit-animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
-        -moz-animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
+        //margin: 0px 300%;
+        transform: translateX(300%);
         animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
     }
     .intro-container{
@@ -330,31 +315,24 @@ $accent: rgba(252, 177, 38, 0.8);
         height: auto;
         width: 25vh;
         opacity: 0;
-        -webkit-animation: intro-animFade 0.6s linear 3.5s 1 normal forwards;
-        -moz-animation: intro-animFade 0.6s linear 3.5s 1 normal forwards;
         animation: intro-animFade 0.6s linear 3.5s 1 normal forwards;
     }
     .overlay{
-        -webkit-animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
-        -moz-animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
         animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
     }
     #top img{
-        margin: 0 300%;
-        -webkit-animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
-        -moz-animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
+        //margin: 0 300%;
+        transform: translateX(300%);
         animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
     }
     #mid1 img{
-        margin: 0 300%;
-        -webkit-animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
-        -moz-animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
+        //margin: 0 300%;
+        transform: translateX(300%);
         animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
     }
     #mid2 img{
-        margin: 0 300%;
-        -webkit-animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
-        -moz-animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
+        //margin: 0 300%;
+        transform: translateX(300%);
         animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
     }
     .intro-container{

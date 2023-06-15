@@ -12,7 +12,7 @@ console.log("preload.js: preload class added");
 function showPage() {
     if (loadComplete === false){
         loadComplete = true;
-        document.body.classList.remove('js-loading');
+        document.body.classList.remove("js-loading");
         document.getElementById("loadingMsg").remove();
         console.log("preload.js: preload class removed");
     }
@@ -23,4 +23,3 @@ setTimeout(function() {
     console.log("preload.js: timed out on load; running anim...");
     showPage();
   }, 9000); // 3000 milliseconds = 5 seconds
-
