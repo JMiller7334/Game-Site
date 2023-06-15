@@ -56,14 +56,13 @@ nav #navButton {
   padding: 0;
   height: 40px;
   width: 7vw;
-  color: white;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   border-radius: 2px;
   border: 0px solid white;
 }
 nav #navButton:hover {
   transition-duration: 0.25s;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   transform: scale(1.1);
   border: 2px solid white;
 }
@@ -88,7 +87,7 @@ nav #navButton a {
   height: 40px;
   width: 9vw;
   color: rgb(255, 255, 255);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
   text-align: center;
   border: 0px solid rgb(255, 255, 255);
   transition: 0.25s;
@@ -210,7 +209,6 @@ a:active {
 @media only screen and (max-width: 900px) {
   nav {
     height: auto;
-    background-color: #171717;
     width: 100vw;
   }
   nav #navButton {

@@ -11,7 +11,7 @@
 /*VARIABLES*/
 $colorMain: rgb(17, 17, 17); //#484848
 $colorSeccondary: rgba(255, 255, 255, 1);
-$colorButton: rgba(255, 255, 255, 0);
+$colorButton: rgba(0, 0, 0, 0);
 $accent: rgba(66, 172, 254);
 
 $fontMain: 'Ubuntu', sans-serif;
@@ -108,7 +108,7 @@ body{
 
     text-align: center;
     z-index: 300;
-    border: 2px solid purple;
+    //border: 2px solid purple;
 
     p{
         color: $fontColor;
@@ -519,7 +519,7 @@ footer{
 
         height: 100%;
         width: 100vw;
-        margin-top: 100vh;
+        margin-top: 140vh;
         z-index: -1;
 
         img{

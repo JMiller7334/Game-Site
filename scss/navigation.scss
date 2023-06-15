@@ -6,7 +6,6 @@
 $navColorMain: rgba(27, 25, 25, 0.55);
 $navColorSolid: #171717;
 $navButtonColor: rgba(0, 0, 0, 0.75);
-$navButtonColorAlpha: rgba(0, 0, 0, 0);
 $navColorSeccondary: rgba(255, 255, 255, 1);
 $navAccent: rgb(66, 172, 254);
 
@@ -18,7 +17,6 @@ $navAccent: rgb(66, 172, 254);
     'Ubuntu', sans-serif;
     'Ubuntu Condensed', sans-serif;
 */
-
 $navFontMain: 'Ubuntu', sans-serif;
 $navFontSecondary: 'Permanent Marker', cursive;
 $navFontCondensed: 'Ubuntu Condensed', sans-serif;
@@ -81,15 +79,14 @@ nav{
         padding: 0;
         height: 40px;
         width: 7vw;
-        color: $navFontColor;
-        background-color: $navButtonColorAlpha;
+
+        background-color: transparent;
         border-radius: 2px;
         border: 0px solid $navFontColor;
 
         &:hover {
             transition-duration: 0.25s;
-            background-color: $navButtonColorAlpha;
-            //color: $navAccent;
+            background-color: transparent;
             transform: scale(1.1);
             border: 2px solid $navFontColor;
         }
@@ -118,7 +115,7 @@ nav{
     height: 40px;
     width: 9vw;
     color: $navColorSeccondary;
-    background-color: $navButtonColorAlpha;
+    background-color: transparent;
     text-align: center;
     border: 0px solid $navColorSeccondary;
     transition: 0.25s;
@@ -257,7 +254,6 @@ a:active {
 @media only screen and (max-width: 900px){
     nav {
         height: auto;
-        background-color: $navColorSolid;
         width: 100vw;
         #navButton {
             height: auto;
