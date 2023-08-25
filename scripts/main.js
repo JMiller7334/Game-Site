@@ -1,4 +1,4 @@
-/*WHATS THIS:
+/*Notes:
 main.js handles toggling the sidebar, and toggling the page's main content.
 It ensures the page scrolls to the top when content has been changed too.
 It also handles clearing the pages intro content after it has been played.
