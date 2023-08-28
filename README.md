@@ -10,5 +10,4 @@ Website to promote a game that I designed and launched.
 The underlying content is removed from the page through JavaScript.
 
 ## Copyright
-All content for this website was created by me and I reserve all rights to the content of this website and the website itself.
 Copyright Jacob Miller 2023. All rights reserved.
