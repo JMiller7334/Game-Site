@@ -2,12 +2,12 @@
 main.js handles toggling the sidebar, and toggling the page's main content.
 It ensures the page scrolls to the top when content has been changed too.
 It also handles clearing the pages intro content after it has been played.
- */
+ 
 
 let menuOpen = false;
 let introPlayed = false;
 //SIDEBAR STUFF//
-/*This code drags/moves the sidebar out onto the page. */
+//This code drags/moves the sidebar out onto the page. //
 function toggleSidebar() {
     let menu = document.getElementById("sidebarMenu");
     let menuButton = document.getElementById("buttonToggleSidebar");
@@ -48,7 +48,7 @@ function toggleContent(request){
         /* brings in new content 
         NOTE: a bit of a hack but this uses the state of the heroFeaturesMobile ID to determine if the user
         is on a mobile device - if so we use the img hero for features.
-        */
+        
         if (request == "Features"){
             document.getElementById("heroGradient").style.display = "none"
             //if (window.getComputedStyle(document.getElementById("heroFeaturesMobile")).display === "block"){
@@ -106,7 +106,7 @@ function onOrientationChanged(change){
     }
 };
 window.matchMedia("orientation: portrait").addEventListener("change", onOrientationChanged);
-*/ //VIDEO RUN ON BOTH NOT USED
+ //VIDEO RUN ON BOTH NOT USED
 
 
 //NOTE: func below handles clearing the intro screen after animations play.
@@ -158,4 +158,4 @@ function scroll2top() {
     // For Safari, Chrome, Firefox, IE, and Opera
     document.body.scrollIntoView({top: 0, behavior: 'smooth'});
     document.documentElement.scrollIntoView({top: 0, behavior: 'smooth'});
-}
+}*/

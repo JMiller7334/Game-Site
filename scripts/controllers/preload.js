@@ -1,4 +1,4 @@
-/*This script handles ensuring all the content on the page is loaded bore the animations or the intro are played.
+/*This script handles ensuring all the content on the page is loaded before the animations or the intro are played.
 If the loading takes too long the script will abort the halt and allow the user access.*/
 
 //set up the class to mark the halt; add an event to wait for loading.

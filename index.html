@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ride roller coasters, hang out with friends, and have a blast in our thrilling online social hangout on Roblox. Join the excitement today!">
-    <title>Theme Park Project: Ride Roller Coasters! Hang With Friends!</title>
+    <meta name="description" content="Ride roller coasters, hang out with friends, and have a blast in a thrilling online social hangout on Roblox. Join the excitement today!">
+    <title>Theme Park Project: Play Now! Ride Roller Coasters!</title>
 
     <!-- favicon  -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -16,6 +16,7 @@
 
     <link rel="stylesheet" href="css/main.css">
     <!-- FONT AWESOME -->
+    <script type="module" src="scripts/views/indexView.js"></script>
     <script src="https://kit.fontawesome.com/1d4d27c0b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -80,7 +81,7 @@
                 </div>
             
                 <div class="nav-button-container" id="nav-game-info">
-                    <button id="buttonToggleSidebar" onclick="toggleSidebar()" class="sidebarButton">&#9776; Game Info</button>
+                    <button id="buttonToggleSidebar" class="sidebarButton">&#9776; Game Info</button>
                 </div>
     </nav>
 
@@ -137,13 +138,13 @@
             </div>
             <div class="parallax-gradient"></div>
             <div class="button-container">
-                <button class="notSelected" id="buttonStory" onclick="toggleContent('Story')" 
+                <button class="notSelected" id="buttonStory"
                 class="sidebarButton">Story</button>
 
-                <button class="notSelected" id="buttonRides" onclick="toggleContent('Rides')" 
+                <button class="notSelected" id="buttonRides" 
                 class="sidebarButton">Rides</button>
 
-                <button class="isSelected" id="buttonFeatures" onclick="toggleContent('Features')"
+                <button class="isSelected" id="buttonFeatures"
                 class="sidebarButton">Features</button>
             </div>
 
@@ -375,7 +376,7 @@
 
     </div> <!-- page-main-container -->
 
-    <button class="return-button" id="returnButton" onclick="scroll2top()" >
+    <button class="return-button" id="returnButton">
         <i class="fa-solid fa-arrow-up fa-2x"></i>
     </button>
 
@@ -393,7 +394,7 @@
         </div>
     </footer>
     <!-- preload script -->
-    <script src="scripts/preload.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/controllers/preload.js"></script>
+    <script type="module" src="scripts/controllers/indexController.js"></script>
 </body>
 </html>
