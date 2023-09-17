@@ -275,7 +275,7 @@ a:active {
     width: 100vw;
   }
   nav #navButton {
-    height: auto;
+    height: 5vh;
     margin: 5px;
     font-size: 15px;
     width: 80px;
@@ -747,7 +747,7 @@ footer {
   z-index: 200;
   display: none;
   position: fixed;
-  bottom: 6vh;
+  bottom: 7vh;
   right: 25px;
   animation: intro-animFade 0.7s linear 0s 1 normal forwards;
   opacity: 0;

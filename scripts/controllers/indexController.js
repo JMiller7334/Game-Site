@@ -81,4 +81,3 @@ export function clearIntroContent(event, introContainer){
         }
     }
  };
-

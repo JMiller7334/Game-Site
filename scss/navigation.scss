@@ -28,7 +28,7 @@ $sidebarFontSize: 25px;
 /* NAV MENU */
 nav{
     z-index: 104;
-    background-color: $navColorSolidf;
+    background-color: $navColorSolid;
     display: grid;
     grid-template-columns: 1fr, 1fr;   //2fr, 1f;
     grid-template-rows: 7vh;
@@ -256,7 +256,7 @@ a:active {
         height: auto;
         width: 100vw;
         #navButton {
-            height: auto;
+            height: 5vh;
             margin: 5px;
             font-size: 15px;
             width: 80px;

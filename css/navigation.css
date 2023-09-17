@@ -212,7 +212,7 @@ a:active {
     width: 100vw;
   }
   nav #navButton {
-    height: auto;
+    height: 5vh;
     margin: 5px;
     font-size: 15px;
     width: 80px;
