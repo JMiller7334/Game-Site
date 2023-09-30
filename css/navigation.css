@@ -133,68 +133,19 @@ nav #navButton a {
 }
 
 footer {
-  opacity: 0;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas: "social";
-  position: fixed;
-  bottom: 0%;
-  left: 0%;
-  width: auto;
-  height: 7vh;
-  min-height: 50px;
   z-index: 110;
-  margin-left: 10px;
-}
-footer .footerInfoContainer {
-  grid-area: info;
+  opacity: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  gap: 20px;
-  margin: 10px;
-}
-footer .footerInfoContainer p {
-  text-align: center;
-  font-family: "Ubuntu", sans-serif;
-  color: white;
-}
-footer .footerSocialContainer {
-  grid-area: social;
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  gap: 20px;
-  margin: 10px;
-}
-footer .footerSocialContainer p {
-  text-align: center;
-  font-family: "Ubuntu", sans-serif;
-  color: white;
-}
-footer .footerSocialContainer button {
-  border: 0;
-  outline: 0;
-  color: rgba(0, 0, 0, 0.75);
-  font-family: "Ubuntu", sans-serif;
-  font-size: 25px;
-  width: 40px;
-  margin: 2px 0.5em;
-}
-footer .footerSocialContainer button:hover {
-  transition-duration: 0.25s;
-  color: rgb(66, 172, 254);
-  transform: skewY(-15deg);
-}
-footer .footerSocialContainer button:hover a {
-  color: rgb(66, 172, 254);
-}
-footer .footerSocialContainer button a {
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.75);
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  padding: 10px;
+  width: auto;
+  overflow: hidden;
 }
 
 a:link,
@@ -205,7 +156,6 @@ a:active {
   text-decoration: none;
 }
 
-/* RESPONSIVE -- MOBILE DESIGN */
 @media only screen and (max-width: 900px) {
   nav {
     height: auto;
@@ -213,21 +163,15 @@ a:active {
   }
   nav #navButton {
     height: 5vh;
-    margin: 5px;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
     font-size: 15px;
-    width: 80px;
+    width: auto;
+    max-width: 20vw;
     border-radius: 7px;
-  }
-  footer {
-    left: 0%;
-    width: 100vw;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "social";
-    background-color: #171717;
-    opacity: 0;
-    height: 50px;
-    margin-left: 0;
+    text-align: center;
+    white-space: nowrap;
   }
   #buttonToggleSidebar {
     z-index: 117;

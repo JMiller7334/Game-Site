@@ -1,0 +1,956 @@
+// By Jacob Miller
+/*SCSS FILES*/
+@import 'reset';
+@import 'navigation';
+@import 'intro';
+
+/*FONTS*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap');
+
+//animations key frames:
+@keyframes bounce_613 {
+    40% {
+      transform: scale(1.1);
+    }
+  
+    60% {
+      transform: scale(0.7);
+    }
+  
+    80% {
+      transform: scale(1.1);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+}
+
+@keyframes intro-animFade {//logo and article fade
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+
+/*VARIABLES*/
+$colorMain: rgb(17, 17, 17); //#484848
+$colorSeccondary: rgba(255, 255, 255, 1);
+$colorButton: rgba(0, 0, 0, 0);
+$accent: rgba(66, 172, 254);
+
+$fontMain: 'Ubuntu', sans-serif;
+$fontSecondary: 'Permanent Marker', cursive;
+$fontCondensed: 'Ubuntu Condensed', sans-serif;
+
+$fontP-mobile: calc(1rem + 1vw);
+$fontLH-mobile: calc(1rem + 3vw);
+
+
+$fontP-desktop: calc(0.5rem + 1vw);
+$fontLH-desktop: calc(0.5rem + 1.75vw);
+
+
+$fontColor: white;
+$bgColor: #171717;
+
+//retrun button:
+.return-button{
+    z-index: 200;
+    display: none;
+    position: fixed;
+    bottom: 2vh;
+    right: 2vh;
+
+    animation: intro-animFade 0.7s linear 0s 1 normal forwards;
+    opacity: 0;
+
+
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border: 3.5px solid $accent;
+    border-radius: 30px;
+
+    i{
+        background-color: transparent;
+        color: $accent;
+    }
+    &:hover {
+        transition-duration: 0.25s;
+        border-color: $fontColor;
+        transform: scale(1.2);
+    }
+    &:hover i{
+        transition-duration: 0.25s;
+        color: $fontColor;
+    }
+}
+
+.horizontal-line {
+    width: 90vw;
+    height: 2px;
+    margin-bottom: 15px;
+    background-color: $fontColor;
+    border: none;
+    display: block;
+}
+
+//Universal classes:
+p{
+    font-size: $fontP-mobile;
+    font-family: $fontMain;
+    color: $fontColor;
+    text-align: left;
+
+    line-height: 1.3;
+}
+
+h2{
+    font-family: $fontCondensed;
+    color: $fontColor;
+    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    font-size: $fontLH-mobile;
+    text-align: center;
+}
+
+body{
+    margin: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+html{
+    background-color: $bgColor;
+}
+
+/*This is the main paralllax container and will act as a wrapper for the whole page.
+meaning that all page will be place within this div.*/
+.os-parallax-container{
+    height: 100vh; //fix height to fill screen.
+    width: 100%;
+
+    .parallax-background{
+        position: relative;
+
+        /*lines below effectly center all the parallax images on the
+            page so they are stacked over one another.*/
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        width: 100vw;
+        bottom: -200vh;
+
+        z-index: -10;
+    
+        //Holds common properties shared accross all paralax layers.
+        .parallax-layer{
+            position: absolute;
+            height: 70vh;
+            min-height: 600px;
+            width: 100vw;
+            object-fit: cover;
+        }
+        //this hides layer movement that happen in the background
+        .parallax-fill{
+            z-index: 900;
+            //border: 2px solid red;
+
+            position: absolute;
+            width: 100vw;
+            height: 35vh;
+            bottom: -145vh;
+            background-color: $bgColor;
+    
+            transform: translateZ(-2px) scale(1.21);
+        }
+
+        //parallax Zindex//
+        #parallax1{
+            height: 110vh;
+            transform: translateZ(-2px) scale(1.2);
+
+            z-index: -11; //sets the current layer.
+        }
+        #parallax2{
+            margin-top: 3vh;
+            transform: translateZ(-3px) scale(1.3);
+            height: 100vh;
+            z-index: -12;
+        }
+        #parallax3{
+            margin-top: 35vh;
+            transform: translateZ(-4px) scale(1.4);
+            z-index: -13;
+        }
+        #parallax4{
+            margin-top: 42vh;
+            transform: translateZ(-6px) scale(1.6);
+            z-index: -14;
+        }
+        #parallax5{
+            margin-top: 30vh;
+            transform: translateZ(-8px) scale(1.8);
+            z-index: -15
+        }
+        #parallax6{
+            margin-top: 30vh;
+            transform: translateZ(-9px) scale(1.9);
+            z-index: -16;
+        }
+        #parallax7{
+            margin-top: 20vh;
+            height: 80vh;
+            z-index: -17;
+            transform: translateZ(-10px) scale(2);
+        }  
+    }
+}
+
+.os-content-container{
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "page-hero"
+    "page-about"
+    "page-features"
+    "page-install"
+    "page-download";
+}
+
+.os-hero{
+    //border: 2px solid blue;
+
+    display: flex;
+
+    height: 50vh;
+    overflow: hidden;
+    z-index: 1;
+    background-color: $bgColor;
+
+
+    .os-hero-text{
+        position: absolute;
+        z-index: 30;
+        font-size: 1.1em;
+        font-family: $fontCondensed;
+        color: $fontColor;
+        margin: 15px;
+        margin-top: calc(8.5vh + 3px);
+
+        opacity: 0;
+        animation: intro-animFade 0.7s linear 0.25s 1 normal forwards;
+    }
+
+    img{
+        position: relative;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: 50%;
+    }
+    .os-overlay{
+        //border: 2px solid blue;
+
+        z-index: 3;
+        position: absolute;
+        background-color: $bgColor;
+        opacity: 0.25;
+        top: 0;
+        width: 100%;
+        height: 50vh;
+    }
+    //ids
+    #osHeroLowerGradient{
+        background-image: linear-gradient(rgba(0, 0, 0, 0), $bgColor);
+        margin-top: 30vh;
+    }
+
+    #osHeroUpperGradient{
+        margin-top: 7vh;
+        background-image: linear-gradient($bgColor, rgba(0, 0, 0, 0));
+    }
+}
+
+.os-about{
+
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    justify-content: center;
+
+    //padding: 20px;
+    grid-area: page-about;
+    height: auto;
+    min-height: 500px;
+
+    width: 100vw;
+
+    background-color: $bgColor;
+
+    p{
+        position: relative;
+        margin-left: 5vw;
+        margin-right: 5vw;
+    }
+}
+
+.os-features{
+    //border: 2px solid red;
+
+    z-index: 1;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+    grid-area: page-features;
+
+    background-color: $bgColor;
+
+    h2{
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    article{
+        //border: 2px solid red;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+
+        padding: 20px;
+        padding-top: 7px;
+        padding-bottom: 0px;
+        ul{
+            width: 85%;
+            padding: 5vw;
+            padding-top: 0;
+            list-style-type:none;
+            li{
+                width: 37%;
+                font-family: $fontMain;
+                font-size: calc(2vw + 3px);//$fontP-mobile;
+                color: $fontColor;
+                padding-bottom: 10px;
+
+                white-space:nowrap;
+            
+            }
+        }
+    }
+}
+
+.os-install{
+
+    //border: 2px solid yellow;
+
+    grid-area: page-install;
+
+    background-color: $bgColor;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: fit-content;
+
+    .horizontal-line{
+        margin-bottom: 20px;
+    }
+
+    h2{
+        width: 100%;
+    }
+
+    p{
+        text-align: center;
+        width: auto;
+        padding: 2%;
+        padding-left: 20px;
+        font-size: 15px;
+    }
+}
+
+.os-download{
+    //border: 2px solid green;
+
+    z-index: 0;
+    grid-area: page-download;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    height: fit-content;
+    background-color: $bgColor;
+
+    h2{
+        padding-top: 200px;
+    }
+
+    section{
+        display: flex;
+        flex-direction: row;
+        gap: 3vw;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 10px;
+
+        p{
+            font-size: 14px;
+            padding: 0 0 20px;
+            padding-bottom: 20px;
+        }
+    }
+    .os-gradient{
+        display: none;
+        margin-bottom: 40vh;
+        background-image: linear-gradient($bgColor, rgba(0, 0, 0, 0));
+    }
+}
+
+//universal classes:
+.os-gradient{
+    z-index: 2;
+    display: block;
+    position: absolute;
+    width: 100vw;
+    height: 20vh;
+}
+
+.download-button {
+
+    height: 5vh;
+    min-height: 40px;
+
+    z-index: 10;
+    display: inline-block;
+    border-radius: 7px;
+    border: none;
+    background: #df5206;
+    color: white;
+    font-family: $fontCondensed;
+    text-align: center;
+    font-size: 13px;
+    //box-shadow: 0px 14px 56px -11px #e54211;
+    width: 10em;
+    padding: 1em;
+    transition: all 0.4s;
+    cursor: pointer;
+  
+    span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.4s;
+  
+        &:after {
+        content: 'for free';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.7s;
+    }
+}
+  
+&:hover span {
+    padding-right: 3.55em;
+}
+  
+&:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+}
+
+.github-button {
+
+    height: 5vh;
+    min-height: 40px;
+
+    display: flex;
+    background-color: rgb(59, 59, 59);
+    color: #ffffff;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    font-family: $fontCondensed;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 0.5rem;
+    gap: 0.75rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: 0.6s ease;
+
+    svg {
+        height: 30px;
+    }
+
+    &:hover {
+        background-color: rgb(46, 4, 46);
+        animation: bounce_613 0.4s linear;
+    }
+}
+
+.twitter-button {
+    z-index: 2;
+    display: flex;
+    height: 5vh;
+    min-height: 50px;
+    width: 5vh;
+    min-height: 50px;
+  
+    svg {
+      position: absolute;
+      display: flex;
+      width: 75%;
+      height: 75%;
+      font-size: 24px;
+      font-weight: 700;
+      opacity: 1;
+      transition: opacity 0.25s;
+      z-index: 2;
+      cursor: pointer;
+    }
+  
+    .social-link2{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      color: whitesmoke;
+      font-size: 24px;
+      text-decoration: none;
+      transition: 0.25s;
+      border-radius: 50px;
+    }
+  
+    svg {
+      transform: scale(1);
+    }
+    .social-link2:hover {
+      background-color: #00ccff;
+      animation: bounce_613 0.4s linear;
+    }
+}
+
+//desktop & parallax rules:
+@media only screen and (min-width: 900px),
+    only screen and (orientation: landscape){
+
+    .horizontal-line {
+        width: 60vw;
+        height: 2px;
+        margin-bottom: 15px;
+        background-color: $fontColor;
+        border: none;
+        display: block;
+    }
+
+    h2{
+        font-size: $fontLH-desktop;
+        text-align: center;
+        padding: 20px;
+        padding-bottom: 10px;
+    }
+    p{
+        font-size: $fontP-desktop;
+    }
+
+    //return button
+    .return-button{
+        background-color: transparent;
+        bottom: 5vh;
+        right: 5%;
+    }
+
+    //parallax limitation rules: this code enables the necessary seetings for  parallax effects.
+    @media screen and (min-height: 700px) {
+
+        //scrolling to be handled by the parallax container so parallax effects can be applied.
+        body{
+            overflow: hidden;
+        }
+
+        .os-parallax-container{
+
+            //lines below enable parallax effects.
+            overflow-x: hidden;
+            overflow-y: scroll;
+            perspective: 10px;
+
+            .parallax-background{
+                display: block;
+                transform-style: preserve-3d;
+            }
+        }
+    }
+    .os-hero{
+            //border: 2px solid blue;
+            height: 80vh;
+            overflow: hidden;
+            z-index: 1;
+            background-color: $bgColor;
+        
+            .os-hero-text{
+                position: absolute;
+                z-index: 30;
+                font-size: 2.1em;
+                font-family: $fontCondensed;
+                color: $fontColor;
+                margin: 10px;
+                margin-top: 8.5vh;
+        
+                opacity: 0;
+            }
+        
+            img{
+                z-index: -1;
+                width: 100vw;
+                height: 100%;
+        
+                object-fit: cover;
+                object-position: 50%;
+            }
+            .os-overlay{
+                //border: 2px solid blue;
+        
+                z-index: 3;
+                position: absolute;
+                background-color: $bgColor;
+                opacity: 0.25;
+                top: 0;
+                width: 100vw;
+                height: 80vh;
+            }
+            //ids
+            #osHeroLowerGradient{
+                background-image: linear-gradient(rgba(0, 0, 0, 0), $bgColor);
+                margin-top: 60vh;
+            }
+        
+            #osHeroUpperGradient{
+                margin-top: 7vh;
+                background-image: linear-gradient($bgColor, rgba(0, 0, 0, 0));
+            }
+
+
+        .os-about{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        
+            grid-area: page-about;
+            height: 60vh;
+            min-height: 500px;
+            width: 100%;
+            padding-left: 20%;
+            padding-right: 20%;
+        
+            background-color: $bgColor;
+        
+            p{
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+        }
+
+        .os-features{
+            //border: 2px solid red;
+        
+            z-index: 1;
+            width: 100%;
+            height: auto;
+        
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        
+            grid-area: page-features;
+        
+            background-color: $bgColor;
+
+            padding-left: 25%;
+            padding-right: 25%;
+            padding-bottom: 0;
+        
+            h2{
+                width: 100%;
+                text-align: center;
+            }
+        
+            article{
+                //border: 2px solid red;
+        
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+        
+                padding: 20px;
+                padding-top: 7px;
+                padding-bottom: 0;
+                ul{
+                    width: 100%;
+                    padding: 5vw;
+                    padding-top: 0;
+                    list-style-type:disc;
+                    li{
+                        font-family: $fontMain;
+                        font-size: auto;
+                        color: $fontColor;
+                        padding-bottom: 10px;
+                    
+                    }
+                }
+            }
+        }
+
+        .os-install{
+
+            //border: 2px solid yellow;
+        
+            grid-area: page-install;
+            background-color: $bgColor;
+        
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            //justify-content: center;
+        
+            width: 100%;
+            height: 55vh;
+
+            padding-left: 25%;
+            padding-right: 25%;
+        
+            h2{
+                text-align: center;
+                width: 100%;
+            }
+        
+            p{
+                text-align: center;
+                width: 100%;
+                padding: 2%;
+                padding-left: 20px;
+                font-size: 15px;
+            }
+        }
+    }
+
+    .os-about{
+
+        display: flex;
+        flex-direction: column;
+        //align-items: center;
+        justify-content: center;
+    
+        //padding: 20px;
+        grid-area: page-about;
+        height: auto;
+        min-height: 500px;
+    
+        width: 100vw;
+        padding-left: 15%;
+        padding-right: 15%;
+    
+        background-color: $bgColor;
+    
+        p{
+            margin-left: 5vw;
+            margin-right: 5vw;
+        }
+    }
+
+    .os-features{
+        //border: 2px solid red;
+    
+        z-index: 1;
+        width: 100%;
+        height: auto;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+    
+        grid-area: page-features;
+        padding-top: 50px;
+    
+        background-color: $bgColor;
+    
+        h2{
+            width: 100%;
+        }
+    
+        article{
+            //border: 2px solid red;
+    
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+    
+            padding: 20px;
+            padding-top: 7px;
+            padding-bottom: 0px;
+            ul{
+                width: 100%;
+                padding: 5vw;
+                padding-top: 0;
+                list-style-type:none;
+                li{
+                    font-family: $fontMain;
+                    font-size: calc(1rem + 0.2vw);
+                    color: $fontColor;
+                    padding-bottom: 10px;
+                
+                }
+            }
+        }
+    }
+
+    .os-install{
+
+        //border: 2px solid yellow;
+    
+        grid-area: page-install;
+    
+        background-color: $bgColor;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    
+        width: 100vw;
+        height: 55vh;
+
+        padding-bottom: 50px;
+
+        iframe{
+            padding-top: 10px;
+            width: 560px;
+            height: 340px;
+        }
+    
+        h2{
+            width: 100%;
+        }
+    
+        p{
+            text-align: center;
+            padding: 15px;
+            padding-left: 20px;
+            font-size: 15px;
+        }
+    }
+
+    .os-download{
+        z-index: 0;
+        grid-area: page-download;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+                    
+        height: 300px;
+        width: 100%;
+        background-color: $bgColor;
+        padding-top: 100px;
+
+        .horizontal-line{
+            display: none;
+        }
+                
+        section{
+            padding: 20px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100vw;
+
+                
+            p{
+                font-size: 14px;
+                padding: 0 0 20px;
+            }
+        }
+    }
+                
+    .os-gradient {
+        display: block;
+        margin-bottom: 90vh;
+        background-image: linear-gradient($bgColor, rgba(0, 0, 0, 0));
+    }   
+
+    //adjustemnts to os-download for parallax:
+    @media screen and (min-height: 700px) and (min-width: 900px) {
+        .os-download {
+            //border: 2px solid green;
+            z-index: 0;
+            grid-area: page-download;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+                        
+            height: 110vh;
+            background-color: transparent;
+                    
+            section {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 3vw;
+                padding-left: 20px;
+                padding-top: 20px;
+                    
+                p {
+                    font-size: 14px;
+                    padding: 0 0 20px;
+                    padding-bottom: 20px;
+                }
+            }
+                    
+            .os-gradient{
+                display: block;
+                margin-bottom: 90vh;
+                background-image: linear-gradient($bgColor, rgba(0, 0, 0, 0));
+            }       
+        }    
+    }
+}

@@ -85,6 +85,8 @@ $bgColor: #171717;
 */
 
 // MOBILE DESIGN //
+
+
 body{
     overflow-x: hidden;
     background-color: $bgColor;
@@ -106,6 +108,8 @@ body{
     justify-content: center;
     align-items: center;
 
+    padding-top: 100px;
+
     text-align: center;
     z-index: 300;
     //border: 2px solid purple;
@@ -125,22 +129,20 @@ footer{
 .return-button{
     z-index: 200;
     display: none;
-    position: fixed;
-    bottom: 7vh;
-    right: 25px;
+    //position: fixed;
 
     animation: intro-animFade 0.7s linear 0s 1 normal forwards;
     opacity: 0;
 
 
-    height: 50px;
-    width: 50px;
-    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    background-color: $bgColor;
     border: 3.5px solid $accent;
     border-radius: 30px;
 
     i{
-        background-color: transparent;
+        background-color: $bgColor;
         color: $accent;
     }
     &:hover {
@@ -156,6 +158,7 @@ footer{
 #copyright-statement{
     p{
         font-size: 15px;
+        margin-bottom: 7vh;
     }
 }
 
@@ -491,11 +494,7 @@ footer{
         transform: translateZ(0px) scale(1);
     }
 
-    .return-button{
-        background-color: transparent;
-        bottom: 5vh;
-        right: 5%;
-    }
+
     //PARALLAX CONTAINER//
     //NOTE: this is the main scroll container
     .parallax-gradient{
@@ -565,6 +564,9 @@ footer{
     }
 
     .page-main-container{
+
+        overflow-x: hidden;
+
         top: 0;
         display: grid;
         grid-template-columns:1fr 2fr 1fr;
@@ -615,4 +617,76 @@ footer{
  nav{
     z-index: 200;
  }
+
+ //universal:
+ @keyframes bounce_613 {
+    40% {
+      transform: scale(1.1);
+    }
+  
+    60% {
+      transform: scale(0.7);
+    }
+  
+    80% {
+      transform: scale(1.1);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+}
+
+ .twitter-button {
+    z-index: 2;
+    display: flex;
+    height: 40px;
+    min-height: 40px;
+    width: 40px;
+    min-height: 40px;
+
+    background-color: $bgColor;
+    border: 3px solid $accent;
+    border-radius: 100%;
+
+    &:hover{
+        border: 0;
+    }
+  
+    svg {
+      position: absolute;
+      display: flex;
+      width: 75%;
+      height: 75%;
+      font-size: 24px;
+      font-weight: 700;
+      opacity: 1;
+      transition: opacity 0.25s;
+      z-index: 2;
+      cursor: pointer;
+    }
+  
+    .social-link2{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      color: $accent;
+      font-size: 24px;
+      text-decoration: none;
+      transition: 0.25s;
+      border-radius: 50px;
+    }
+  
+    svg {
+      transform: scale(1);
+    }
+    .social-link2:hover {
+      background-color: $fontColor;
+      animation: bounce_613 0.4s linear;
+    }
+}
+
+
 

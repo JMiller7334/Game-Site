@@ -1,17 +1,6 @@
 /*Controller:
 */
 
-/**SCROLL TOP:
- * this function scrolls the user to the top of the webpage when they 
- * hit the return button on the webpage.
- */
-export function scroll2top() {
-    console.log("index-controller: scroll2top")
-    // For Safari, Chrome, Firefox, IE, and Opera
-    document.body.scrollIntoView({top: 0, behavior: 'smooth'});
-    document.documentElement.scrollIntoView({top: 0, behavior: 'smooth'});
-};
-
 /**TAB CHANGE:
  * this code handles changing the tab and page content when the user
  * clicks on one of the tab buttons on the webpage.

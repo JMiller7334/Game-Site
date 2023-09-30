@@ -1,4 +1,5 @@
 import * as controller from '../controllers/indexController.js';
+import * as module_returnButton from '../modules/returnButton.js';
 
 const introContainer = document.getElementById("introContainer");
 const contentContainer = document.getElementById("contentContainer");
@@ -12,6 +13,7 @@ const contentTexts = {
     Features: ""
 };
 
+// generate listens for each 'tab' button.
 contentTypes.forEach(contentType => {
     const button = document.getElementById("button" + contentType);
     button.addEventListener("click", () => controller.toggleContent(contentType, contentTypes, contentTexts));
@@ -45,31 +47,11 @@ contentContainer.addEventListener("animationend", (event) => {
 let returnButton = document.getElementById("returnButton");
 returnButton.addEventListener('click', function(){
     console.log("index-view: return button clicked.");
-    controller.scroll2top();
+    module_returnButton.scroll2top();
  });
 window.onscroll = function() {
-    onScroll();
+    module_returnButton.onScroll(contentContainer);
 };
 contentContainer.onscroll = function(){
-    onScroll();
-};
-function onScroll() {
-    let targetPosition = window.innerHeight/2; // Position to show the button (e.g., 100vh)
-    if (contentContainer.scrollTop > targetPosition || document.documentElement.scrollTop > targetPosition) {
-
-        // Clear any existing animation styles
-        returnButton.style.animation = '';
-        // Set new animation properties
-        returnButton.style.animationName = 'intro-animFade';
-        returnButton.style.animationDuration = '0.7s';
-        returnButton.style.animationTimingFunction = 'ease-in-out';
-        returnButton.style.display = "block";
-    } else {
-        // Clear any existing animation styles
-        returnButton.style.animation = '';
-        // Set new animation properties
-        returnButton.style.animationName = 'anim-disappear-returnButton';
-        returnButton.style.animationDuration = '0.7s';
-        returnButton.style.animationTimingFunction = 'ease-in-out';
-    }
+    module_returnButton.onScroll(contentContainer);
 };

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Ride roller coasters, hang out with friends, and have a blast in a thrilling online social hangout on Roblox. Join the excitement today!">
     <title>Theme Park Project: Play Now! Ride Roller Coasters!</title>
 
@@ -75,6 +75,18 @@
                     <div class="nav-logo-container">
                         <img src="img/vectors/vectorGameLogo.svg" alt="Project Theme Park logo">
                     </div>
+
+                    <!-- Site link buttons -->
+                    <button id="navButton">
+                        <a href="/index.html">Home</a>
+                    </button>
+
+                    <button id="navButton">
+                        <a href="/pages/opensource.html">Open Source</a>
+                    </button>
+
+
+
                     <button id="navButton" onclick="location.href='https://www.roblox.com/games/636542147/Theme-Park-Project'">
                         <a href="https://www.roblox.com/games/636542147/Theme-Park-Project">Play Now</a>
                     </button>
@@ -117,7 +129,7 @@
         - Platform: PC, Tablet, Mobile <br>
         - Genre: Low-Poly, Story, Social Hangout <br>
         <br>
-        - Release: Coming Summer 2023</span>
+        - Release: Beta available</span>
     </div>
 
     <div class="page-main-container" id="contentContainer">
@@ -126,7 +138,7 @@
             
             <div class="hero-container">
                 <img src="img/coaster_hero.jpg" id="heroRides" alt="Park pool with water slides and roller coaster in the background.">
-                <img src="img/EndBringerHero.jpg" id="heroStory" alt="hero images" alt="Park square with blue looping roller coaster and mountainous background.">
+                <img src="img/EndBringerHero.jpg" id="heroStory" alt="Park square with blue looping roller coaster and mountainous background.">
                 <video id="heroFeatures" preload="auto" autoplay="true" loop="loop" muted="muted">
                     <source src="img/GamePromo.mp4" type="video/mp4">
                 </video>
@@ -168,8 +180,8 @@
                                 <h4>Kana</h4>
                                 <p>She's a temp-hire working at The Theme Park, known for her quick-wit, intelligence, and love for coffee. As a roller coaster engineer, she's considered to be very good her job.
                                     <br><br>
-                                    Despite her professionalism, there seems to be something more that she's searching for at the park.
-                                    Perhaps it's the excitement of uncovering something new and unexpected, or maybe she's on a personal mission to discover a hidden truth about the park.
+                                    However, there seems to be something more that she's searching for at the park.
+                                    Perhaps it's the excitement of uncovering something new and unexpected, or maybe she's on a personal mission to discover a hidden truth.
                                 </p>
                                 <img src="img/photo_kana.jpg" id="photoL" alt="In-game character Kana, she has purple hair in a long pony tail, bangs framing her face, and blue eyes.">
                             </article>
@@ -198,8 +210,6 @@
                                 <p>William was a ride operator who went missing from the park 10 years ago. Despite an extensive investigation, he was never found.
                                     <br><br>
                                     The circumstances surrounding William's disappearance remain a mystery. Some say that he simply wandered off and got lost in the dense forest that surrounds the park, while others believe that it was something more sinister.
-                                    <br><br>
-                                    Whatever the truth may be, William's disappearance has left a lasting impression on the park and those who knew him.
                                 </p>
                                 <img src="img/photo_William.jpg" id="photoR" alt="in-game character william, black and white missing poster. William has long bangs framing his face.">
                             </article>
@@ -259,7 +269,7 @@
                             <p>
                                 Wyvern is an inverted coaster that takes riders on a thrilling journey through a castle on the outskirts of the park. The coaster is well-known for its nine inversions, which provide a heart-pumping ride experience.
                                 <br><br>
-                                Rumor has it that the coaster was built exceedingly fast due to the sudden disappearance of another ride. Despite the mysterious circumstances surrounding its construction, Wyvern has become a fan favorite among coaster enthusiasts.
+                                Rumor has it that the coaster was built exceedingly fast due to the sudden disappearance of another ride. Despite the mysterious circumstances surrounding its construction.
 
                             </p>
                             <img src="img/coaster_wyvern.jpg" id="photoR" alt="Large red inverted roller coaster, lots of loops. Winds through a forest and castle.">
@@ -267,7 +277,7 @@
 
                         <article>
                             <h3>End Bringer</h3>
-                            <p>The Theme Park's classic roller coaster and the oldest standing ride at the park. End Bringer spans almost the entire length of the park. The coaster
+                            <p>The oldest standing ride at the park. End Bringer spans almost the entire length of the park. The coaster
                                 takes riders from the Central Square to the Beachside District where riders are taken high above the sea below.
                                 <br><br>
                                 Featuring 6 inversions End bringer is known for it's iconic interlocking loops and winding corkscrews. Over the years the roller coaster has 
@@ -303,9 +313,9 @@
                 <div class="synopsis-container">
                     <h1>More Than a Theme Park</h1>
                     <p>
-                        Theme Park Project offers a vast and imaginative world, featuring a dynamic day/night cycle and interactive NPCs that bring the park to life. With items to collect, leaderboards to climb, and a captivating 3-chapter story to uncover the mysterious secrets of the park. There's never a dull moment. 
+                        Theme Park Project is an online open-world game and social hangout centered around a story taking place at a fictional theme park. Featuring interesting NPCs, virtual rides, player owned housing, and a 3 chapter story mode. There's never a dull moment! 
                         <br><br>
-                        Players can also fish with friends and enjoy the many unique attractions. Immerse yourself in the lore of Theme Park Project, which includes its own books, and make your mark with customizable titles and player-owned housing. With hours of gameplay, each visit to the park is sure to leave players with something new to discover. 
+                        Players can also fish with friends and discover in-game lore through virtual books. Make your mark with customizable titles and player-owned housing. With hours of gameplay, each visit to the park is sure to leave you with something new to discover. 
                     </p>
             </div>            
                 <div class="content-container">
@@ -376,25 +386,20 @@
 
     </div> <!-- page-main-container -->
 
-    <button class="return-button" id="returnButton">
-        <i class="fa-solid fa-arrow-up fa-2x"></i>
-    </button>
 
     <!-- FOOTER MENU -->
     <footer>
-        <div class="footerSocialContainer">
-        <!--<button><i class="fa fa-facebook"></i></button>
-            <button><i class="fa fa-instagram"></i></button> -->
-            <button onclick="location.href='https://twitter.com/ThemeParkProj'">
-                <a href="https://twitter.com/ThemeParkProj" target="_blank">
-                  <i class="fa fa-twitter"></i>
-                </a>
-              </button>
-            <p></p>
-        </div>
+            <button class="return-button" id="returnButton">
+                <i class="fa-solid fa-arrow-up fa-2x"></i>
+            </button>
+
+            <div class="twitter-button" onclick="location.href='https://twitter.com/ThemeParkProj'">
+                <a class="social-link2" href='https://twitter.com/ThemeParkProj'">
+                <svg viewBox="0 0 16 16" class="bi bi-twitter" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg" style="color: white"> <path fill="rgba(66, 172, 254)" d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path></svg></a>
+            </div>
     </footer>
     <!-- preload script -->
-    <script src="scripts/controllers/preload.js"></script>
+    <script src="scripts/modules/Preload.js"></script>
     <script type="module" src="scripts/controllers/indexController.js"></script>
 </body>
 </html>

@@ -234,6 +234,7 @@ a:active {
     max-width: 20vw;
     border-radius: 7px;
     text-align: center;
+    white-space: nowrap;
   }
   #buttonToggleSidebar {
     z-index: 117;
@@ -602,493 +603,6 @@ a:active {
   }
 }
 /*FONTS*/
-/*VARIABLES*/
-@keyframes make-scrollbar {
-  0% {
-    overflow-y: hidden;
-  }
-  100% {
-    overflow-y: auto;
-  }
-}
-@keyframes anim-appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes anim-disappear-returnButton {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
-}
-@keyframes anim-slide {
-  100% {
-    left: 0;
-  }
-}
-@keyframes anim-select-button {
-  100% {
-    font-size: calc(1rem + 100%);
-    text-decoration: overline;
-    color: rgb(66, 172, 254);
-  }
-}
-@keyframes anim-deselect-button {
-  100% {
-    font-size: calc(1rem + 25%);
-    text-decoration: none;
-  }
-}
-/*font syntax
-    'Roboto', sans-serif;
-    'Caveat', cursive;
-
-    'Permanent Marker', cursive;
-    'Ubuntu', sans-serif;
-    'Ubuntu Condensed', sans-serif;
-*/
-body {
-  overflow-x: hidden;
-  background-color: #171717;
-  animation: make-scrollbar 1s linear 4.5s 1 normal both;
-}
-
-.js-loading *,
-.js-loading *:before,
-.js-loading *:after {
-  animation-play-state: paused !important;
-}
-
-#loadingMsg {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100px;
-  text-align: center;
-  z-index: 300;
-}
-#loadingMsg p {
-  color: white;
-  font-family: "Ubuntu Condensed", sans-serif;
-  font-size: 25px;
-  text-align: center;
-}
-
-footer {
-  animation: intro-animFade 0.7s linear 6s 1 normal forwards;
-}
-
-.return-button {
-  z-index: 200;
-  display: none;
-  animation: intro-animFade 0.7s linear 0s 1 normal forwards;
-  opacity: 0;
-  height: 40px;
-  width: 40px;
-  background-color: #171717;
-  border: 3.5px solid rgb(66, 172, 254);
-  border-radius: 30px;
-}
-.return-button i {
-  background-color: #171717;
-  color: rgb(66, 172, 254);
-}
-.return-button:hover {
-  transition-duration: 0.25s;
-  border-color: white;
-  transform: scale(1.2);
-}
-.return-button:hover i {
-  transition-duration: 0.25s;
-  color: white;
-}
-
-#copyright-statement p {
-  font-size: 15px;
-  margin-bottom: 7vh;
-}
-
-.background {
-  display: none;
-}
-
-.page-main-container {
-  opacity: 0;
-  animation: anim-appear 1s linear 4.5s 1 normal both;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  height: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "page-hero" "page-buttons" "primary-content";
-}
-
-.hero-container {
-  margin-top: 7vh;
-  grid-area: page-hero;
-  height: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: "hero";
-}
-.hero-container .hero-text {
-  z-index: 3;
-  grid-area: hero;
-  height: 65%;
-  width: 60%;
-  font-size: 1em;
-  font-family: "Ubuntu Condensed", sans-serif;
-  color: white;
-  margin: 10px 10px;
-  opacity: 0;
-  animation: intro-animFade 0.7s linear 6s 1 normal forwards;
-}
-.hero-container video {
-  z-index: 10;
-  grid-area: hero;
-  width: 100%;
-  height: auto;
-  background: #171717;
-  display: hidden;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 50%;
-     object-position: 50% 50%;
-}
-.hero-container img {
-  grid-area: hero;
-  width: 100%;
-  height: 77vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 10%;
-     object-position: 10%;
-}
-.hero-container .upper-gradient {
-  display: block;
-  position: absolute;
-  z-index: 2;
-  width: 100vw;
-  height: 30vh;
-  top: 0;
-  background-image: linear-gradient(#171717, rgba(0, 0, 0, 0));
-}
-.hero-container .lower-gradient {
-  margin-top: 37.5vh;
-  display: none;
-  z-index: 11;
-  grid-area: hero;
-  width: 100%;
-  height: 40vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0), #171717);
-}
-.hero-container #heroStory {
-  -o-object-position: 82%;
-     object-position: 82%;
-  z-index: 1;
-  display: none;
-}
-.hero-container #heroRides {
-  -o-object-position: 50%;
-     object-position: 50%;
-  z-index: 1;
-  display: none;
-}
-
-.button-container {
-  z-index: 12;
-  grid-area: page-buttons;
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-  justify-content: center;
-  width: 100vw;
-  height: 15vh;
-  background-color: #171717;
-}
-.button-container button {
-  padding: 5vw;
-  font-family: "Ubuntu Condensed", sans-serif;
-  font-size: 1px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0);
-  border: 0px;
-}
-.button-container button:hover {
-  transition: 0.25s;
-  color: rgb(66, 172, 254);
-  text-decoration: overline;
-}
-.button-container .isSelected {
-  animation: anim-select-button 0.1s linear 0s 1 normal forwards;
-}
-.button-container .notSelected {
-  animation: anim-deselect-button 0.1s linear 0s 1 normal forwards;
-}
-
-.category-container {
-  overflow-x: hidden;
-  background-color: #171717;
-}
-.category-container .synopsis-container {
-  display: flex;
-  flex-direction: column;
-  height: -moz-min-content;
-  height: min-content;
-  margin-top: 0;
-  margin-bottom: 50px;
-}
-.category-container .synopsis-container h1, .category-container .synopsis-container h2 {
-  color: white;
-  font-family: "Permanent Marker", cursive;
-  font-size: calc(1rem + 1.5vw);
-  text-align: center;
-}
-.category-container .synopsis-container p {
-  color: white;
-  font-family: "Ubuntu Condensed", sans-serif;
-  padding: 15px;
-}
-.category-container .content-container {
-  grid-area: primary-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #171717;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.category-container .content-container section {
-  margin-top: 0px;
-  grid-area: section;
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /*grid-template-columns: 2fr 1fr;
-  grid-template-rows: repeat(1fr 3fr);
-  grid-template-areas: 
-      "topic ."
-      "article article";*/
-}
-.category-container .content-container section h2, .category-container .content-container section h3 {
-  grid-area: topic;
-  color: white;
-  font-family: "Permanent Marker", cursive;
-  text-align: left;
-  font-size: calc(1rem + 1.5vw);
-  width: 100%;
-  height: -moz-min-content;
-  height: min-content;
-  margin-top: 3vw;
-  margin-bottom: 0vw;
-  padding-left: 10px;
-}
-.category-container .content-container section h3 {
-  padding-bottom: 15px;
-}
-.category-container .content-container section #banner {
-  border: 2px solid purple;
-  width: 100%;
-  height: 15vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin-bottom: -1vh;
-}
-.category-container .content-container section article {
-  grid-area: article;
-  width: 100%;
-  height: auto;
-  margin-bottom: 50px;
-  padding-left: 25px;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 3fr 2fr;
-  grid-template-rows: min-content 4fr;
-  grid-template-areas: "title img" "info img";
-}
-.category-container .content-container section article h2, .category-container .content-container section article h3, .category-container .content-container section article h4 {
-  vertical-align: bottom;
-  grid-area: title;
-  color: white;
-  font-family: "Permanent Marker", cursive;
-  font-size: calc(1rem + 1.5vw);
-  grid-column-start: 1;
-  grid-column-end: 2;
-  width: 95%;
-  padding: 0vw 0px;
-}
-.category-container .content-container section article p {
-  grid-area: info;
-  color: white;
-  font-family: "Ubuntu Condensed", sans-serif;
-  width: 95%;
-  padding: 5px 1rem;
-  padding-right: 10px;
-}
-.category-container .content-container section article img {
-  grid-area: img;
-}
-.category-container .content-container section article #photoL {
-  width: 80%;
-  transform: rotate(-3deg);
-}
-.category-container .content-container section article #photoR {
-  width: 80%;
-  transform: rotate(2deg);
-}
-.category-container .content-container section article #standardImg {
-  margin-top: 10%;
-  width: 80%;
-}
-.category-container .content-container section article #vectorImg {
-  filter: invert(100%);
-  max-height: 200px;
-}
-.category-container .content-container section #featureItem {
-  grid-template-rows: auto;
-}
-.category-container .content-container section #featureItem img {
-  min-height: 100px;
-  margin-right: 2vw;
-  margin-bottom: 25%;
-}
-.category-container p {
-  font-size: calc(1rem + 1vw);
-  line-height: calc(1rem + 1.5vw);
-}
-
-#categoryStory {
-  display: none;
-}
-#categoryStory img {
-  max-width: 400px;
-}
-
-#categoryRides {
-  display: none;
-}
-
-#categoryFeatures {
-  display: block;
-}
-
-@media only screen and (min-width: 900px), only screen and (orientation: landscape) {
-  nav {
-    transform: translateZ(0px) scale(1);
-  }
-  .parallax-gradient {
-    display: block;
-    position: absolute;
-    z-index: -1;
-    width: 100vw;
-    height: 500px;
-    top: 110vh;
-    background-image: linear-gradient(#171717, rgba(0, 0, 0, 0));
-  }
-  .background {
-    position: absolute;
-    animation: anim-appear 1s linear 6s 1 normal both;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100vw;
-    margin-top: 140vh;
-    z-index: -1;
-  }
-  .background img {
-    height: 100%;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
-  .background .fill {
-    position: absolute;
-    background-color: #171717;
-    width: 100vw;
-    height: 100%;
-    bottom: -110vh;
-  }
-  .hero-container {
-    padding-top: 0;
-  }
-  .hero-container video {
-    z-index: 10;
-    grid-area: hero;
-    width: 100%;
-    height: 83.7vh;
-    background: #171717;
-    display: block;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: 0 0;
-       object-position: 0 0;
-  }
-  .hero-container img {
-    height: 83.7vh;
-  }
-  .hero-container .lower-gradient {
-    margin-top: 44.3vh;
-  }
-  .hero-container #heroStory {
-    -o-object-position: 0%;
-       object-position: 0%;
-  }
-  .page-main-container {
-    overflow-x: hidden;
-    top: 0;
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "page-hero page-hero page-hero" "page-buttons page-buttons page-buttons" "l-gradient primary-content r-gradient";
-  }
-  .page-main-container .l-gradient {
-    height: auto;
-    width: auto;
-    grid-area: l-gradient;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #171717);
-  }
-  .page-main-container .r-gradient {
-    height: auto;
-    width: auto;
-    grid-area: r-gradient;
-    background-image: linear-gradient(to right, #171717, rgba(0, 0, 0, 0));
-  }
-  .page-main-container .button-container {
-    height: 27vh;
-  }
-  .page-main-container .button-container button {
-    padding: 1.5vw;
-    padding-top: 2.5vh;
-  }
-  .page-main-container p {
-    font-size: calc(0.5rem + 1vw);
-    line-height: calc(0.5rem + 1.5vw);
-  }
-  .hero-container .hero-text {
-    font-size: 2em;
-  }
-}
-nav {
-  z-index: 200;
-}
-
 @keyframes bounce_613 {
   40% {
     transform: scale(1.1);
@@ -1103,19 +617,405 @@ nav {
     transform: scale(1);
   }
 }
+@keyframes intro-animFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*VARIABLES*/
+.return-button {
+  z-index: 200;
+  display: none;
+  position: fixed;
+  bottom: 2vh;
+  right: 2vh;
+  animation: intro-animFade 0.7s linear 0s 1 normal forwards;
+  opacity: 0;
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  border: 3.5px solid rgb(66, 172, 254);
+  border-radius: 30px;
+}
+.return-button i {
+  background-color: transparent;
+  color: rgb(66, 172, 254);
+}
+.return-button:hover {
+  transition-duration: 0.25s;
+  border-color: white;
+  transform: scale(1.2);
+}
+.return-button:hover i {
+  transition-duration: 0.25s;
+  color: white;
+}
+
+.horizontal-line {
+  width: 90vw;
+  height: 2px;
+  margin-bottom: 15px;
+  background-color: white;
+  border: none;
+  display: block;
+}
+
+p {
+  font-size: calc(1rem + 1vw);
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  text-align: left;
+  line-height: 1.3;
+}
+
+h2 {
+  font-family: "Ubuntu Condensed", sans-serif;
+  color: white;
+  padding: 20px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  font-size: calc(1rem + 3vw);
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+html {
+  background-color: #171717;
+}
+
+/*This is the main paralllax container and will act as a wrapper for the whole page.
+meaning that all page will be place within this div.*/
+.os-parallax-container {
+  height: 100vh;
+  width: 100%;
+}
+.os-parallax-container .parallax-background {
+  position: relative;
+  /*lines below effectly center all the parallax images on the
+      page so they are stacked over one another.*/
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  bottom: -200vh;
+  z-index: -10;
+}
+.os-parallax-container .parallax-background .parallax-layer {
+  position: absolute;
+  height: 70vh;
+  min-height: 600px;
+  width: 100vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.os-parallax-container .parallax-background .parallax-fill {
+  z-index: 900;
+  position: absolute;
+  width: 100vw;
+  height: 35vh;
+  bottom: -145vh;
+  background-color: #171717;
+  transform: translateZ(-2px) scale(1.21);
+}
+.os-parallax-container .parallax-background #parallax1 {
+  height: 110vh;
+  transform: translateZ(-2px) scale(1.2);
+  z-index: -11;
+}
+.os-parallax-container .parallax-background #parallax2 {
+  margin-top: 3vh;
+  transform: translateZ(-3px) scale(1.3);
+  height: 100vh;
+  z-index: -12;
+}
+.os-parallax-container .parallax-background #parallax3 {
+  margin-top: 35vh;
+  transform: translateZ(-4px) scale(1.4);
+  z-index: -13;
+}
+.os-parallax-container .parallax-background #parallax4 {
+  margin-top: 42vh;
+  transform: translateZ(-6px) scale(1.6);
+  z-index: -14;
+}
+.os-parallax-container .parallax-background #parallax5 {
+  margin-top: 30vh;
+  transform: translateZ(-8px) scale(1.8);
+  z-index: -15;
+}
+.os-parallax-container .parallax-background #parallax6 {
+  margin-top: 30vh;
+  transform: translateZ(-9px) scale(1.9);
+  z-index: -16;
+}
+.os-parallax-container .parallax-background #parallax7 {
+  margin-top: 20vh;
+  height: 80vh;
+  z-index: -17;
+  transform: translateZ(-10px) scale(2);
+}
+
+.os-content-container {
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "page-hero" "page-about" "page-features" "page-install" "page-download";
+}
+
+.os-hero {
+  display: flex;
+  height: 50vh;
+  overflow: hidden;
+  z-index: 1;
+  background-color: #171717;
+}
+.os-hero .os-hero-text {
+  position: absolute;
+  z-index: 30;
+  font-size: 1.1em;
+  font-family: "Ubuntu Condensed", sans-serif;
+  color: white;
+  margin: 15px;
+  margin-top: calc(8.5vh + 3px);
+  opacity: 0;
+  animation: intro-animFade 0.7s linear 0.25s 1 normal forwards;
+}
+.os-hero img {
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50%;
+     object-position: 50%;
+}
+.os-hero .os-overlay {
+  z-index: 3;
+  position: absolute;
+  background-color: #171717;
+  opacity: 0.25;
+  top: 0;
+  width: 100%;
+  height: 50vh;
+}
+.os-hero #osHeroLowerGradient {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), #171717);
+  margin-top: 30vh;
+}
+.os-hero #osHeroUpperGradient {
+  margin-top: 7vh;
+  background-image: linear-gradient(#171717, rgba(0, 0, 0, 0));
+}
+
+.os-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-area: page-about;
+  height: auto;
+  min-height: 500px;
+  width: 100vw;
+  background-color: #171717;
+}
+.os-about p {
+  position: relative;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
+
+.os-features {
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  grid-area: page-features;
+  background-color: #171717;
+}
+.os-features h2 {
+  width: 100%;
+  padding-bottom: 0;
+}
+.os-features article {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  padding-top: 7px;
+  padding-bottom: 0px;
+}
+.os-features article ul {
+  width: 85%;
+  padding: 5vw;
+  padding-top: 0;
+  list-style-type: none;
+}
+.os-features article ul li {
+  width: 37%;
+  font-family: "Ubuntu", sans-serif;
+  font-size: calc(2vw + 3px);
+  color: white;
+  padding-bottom: 10px;
+  white-space: nowrap;
+}
+
+.os-install {
+  grid-area: page-install;
+  background-color: #171717;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.os-install .horizontal-line {
+  margin-bottom: 20px;
+}
+.os-install h2 {
+  width: 100%;
+}
+.os-install p {
+  text-align: center;
+  width: auto;
+  padding: 2%;
+  padding-left: 20px;
+  font-size: 15px;
+}
+
+.os-download {
+  z-index: 0;
+  grid-area: page-download;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #171717;
+}
+.os-download h2 {
+  padding-top: 200px;
+}
+.os-download section {
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+.os-download section p {
+  font-size: 14px;
+  padding: 0 0 20px;
+  padding-bottom: 20px;
+}
+.os-download .os-gradient {
+  display: none;
+  margin-bottom: 40vh;
+  background-image: linear-gradient(#171717, rgba(0, 0, 0, 0));
+}
+
+.os-gradient {
+  z-index: 2;
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 20vh;
+}
+
+.download-button {
+  height: 5vh;
+  min-height: 40px;
+  z-index: 10;
+  display: inline-block;
+  border-radius: 7px;
+  border: none;
+  background: #df5206;
+  color: white;
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-align: center;
+  font-size: 13px;
+  width: 10em;
+  padding: 1em;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.download-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+.download-button span:after {
+  content: "for free";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.7s;
+}
+.download-button:hover span {
+  padding-right: 3.55em;
+}
+.download-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.github-button {
+  height: 5vh;
+  min-height: 40px;
+  display: flex;
+  background-color: rgb(59, 59, 59);
+  color: #ffffff;
+  padding: 0.5rem 1.4rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  gap: 0.75rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: 0.6s ease;
+}
+.github-button svg {
+  height: 30px;
+}
+.github-button:hover {
+  background-color: rgb(46, 4, 46);
+  animation: bounce_613 0.4s linear;
+}
+
 .twitter-button {
   z-index: 2;
   display: flex;
-  height: 40px;
-  min-height: 40px;
-  width: 40px;
-  min-height: 40px;
-  background-color: #171717;
-  border: 3px solid rgb(66, 172, 254);
-  border-radius: 100%;
-}
-.twitter-button:hover {
-  border: 0;
+  height: 5vh;
+  min-height: 50px;
+  width: 5vh;
+  min-height: 50px;
 }
 .twitter-button svg {
   position: absolute;
@@ -1135,7 +1035,7 @@ nav {
   align-items: center;
   justify-content: center;
   width: 100%;
-  color: rgb(66, 172, 254);
+  color: whitesmoke;
   font-size: 24px;
   text-decoration: none;
   transition: 0.25s;
@@ -1145,6 +1045,305 @@ nav {
   transform: scale(1);
 }
 .twitter-button .social-link2:hover {
-  background-color: white;
+  background-color: #00ccff;
   animation: bounce_613 0.4s linear;
-}/*# sourceMappingURL=main.css.map */
+}
+
+@media only screen and (min-width: 900px), only screen and (orientation: landscape) {
+  .horizontal-line {
+    width: 60vw;
+    height: 2px;
+    margin-bottom: 15px;
+    background-color: white;
+    border: none;
+    display: block;
+  }
+  h2 {
+    font-size: calc(0.5rem + 1.75vw);
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 10px;
+  }
+  p {
+    font-size: calc(0.5rem + 1vw);
+  }
+  .return-button {
+    background-color: transparent;
+    bottom: 5vh;
+    right: 5%;
+  }
+}
+@media only screen and (min-width: 900px) and (min-height: 700px), only screen and (orientation: landscape) and (min-height: 700px) {
+  body {
+    overflow: hidden;
+  }
+  .os-parallax-container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    perspective: 10px;
+  }
+  .os-parallax-container .parallax-background {
+    display: block;
+    transform-style: preserve-3d;
+  }
+}
+@media only screen and (min-width: 900px), only screen and (orientation: landscape) {
+  .os-hero {
+    height: 80vh;
+    overflow: hidden;
+    z-index: 1;
+    background-color: #171717;
+  }
+  .os-hero .os-hero-text {
+    position: absolute;
+    z-index: 30;
+    font-size: 2.1em;
+    font-family: "Ubuntu Condensed", sans-serif;
+    color: white;
+    margin: 10px;
+    margin-top: 8.5vh;
+    opacity: 0;
+  }
+  .os-hero img {
+    z-index: -1;
+    width: 100vw;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 50%;
+       object-position: 50%;
+  }
+  .os-hero .os-overlay {
+    z-index: 3;
+    position: absolute;
+    background-color: #171717;
+    opacity: 0.25;
+    top: 0;
+    width: 100vw;
+    height: 80vh;
+  }
+  .os-hero #osHeroLowerGradient {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), #171717);
+    margin-top: 60vh;
+  }
+  .os-hero #osHeroUpperGradient {
+    margin-top: 7vh;
+    background-image: linear-gradient(#171717, rgba(0, 0, 0, 0));
+  }
+  .os-hero .os-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: page-about;
+    height: 60vh;
+    min-height: 500px;
+    width: 100%;
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: #171717;
+  }
+  .os-hero .os-about p {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .os-hero .os-features {
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: page-features;
+    background-color: #171717;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 0;
+  }
+  .os-hero .os-features h2 {
+    width: 100%;
+    text-align: center;
+  }
+  .os-hero .os-features article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-top: 7px;
+    padding-bottom: 0;
+  }
+  .os-hero .os-features article ul {
+    width: 100%;
+    padding: 5vw;
+    padding-top: 0;
+    list-style-type: disc;
+  }
+  .os-hero .os-features article ul li {
+    font-family: "Ubuntu", sans-serif;
+    font-size: auto;
+    color: white;
+    padding-bottom: 10px;
+  }
+  .os-hero .os-install {
+    grid-area: page-install;
+    background-color: #171717;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 55vh;
+    padding-left: 25%;
+    padding-right: 25%;
+  }
+  .os-hero .os-install h2 {
+    text-align: center;
+    width: 100%;
+  }
+  .os-hero .os-install p {
+    text-align: center;
+    width: 100%;
+    padding: 2%;
+    padding-left: 20px;
+    font-size: 15px;
+  }
+  .os-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: page-about;
+    height: auto;
+    min-height: 500px;
+    width: 100vw;
+    padding-left: 15%;
+    padding-right: 15%;
+    background-color: #171717;
+  }
+  .os-about p {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+  .os-features {
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    grid-area: page-features;
+    padding-top: 50px;
+    background-color: #171717;
+  }
+  .os-features h2 {
+    width: 100%;
+  }
+  .os-features article {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    padding-top: 7px;
+    padding-bottom: 0px;
+  }
+  .os-features article ul {
+    width: 100%;
+    padding: 5vw;
+    padding-top: 0;
+    list-style-type: none;
+  }
+  .os-features article ul li {
+    font-family: "Ubuntu", sans-serif;
+    font-size: calc(1rem + 0.2vw);
+    color: white;
+    padding-bottom: 10px;
+  }
+  .os-install {
+    grid-area: page-install;
+    background-color: #171717;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100vw;
+    height: 55vh;
+    padding-bottom: 50px;
+  }
+  .os-install iframe {
+    padding-top: 10px;
+    width: 560px;
+    height: 340px;
+  }
+  .os-install h2 {
+    width: 100%;
+  }
+  .os-install p {
+    text-align: center;
+    padding: 15px;
+    padding-left: 20px;
+    font-size: 15px;
+  }
+  .os-download {
+    z-index: 0;
+    grid-area: page-download;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width: 100%;
+    background-color: #171717;
+    padding-top: 100px;
+  }
+  .os-download .horizontal-line {
+    display: none;
+  }
+  .os-download section {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+  }
+  .os-download section p {
+    font-size: 14px;
+    padding: 0 0 20px;
+  }
+  .os-gradient {
+    display: block;
+    margin-bottom: 90vh;
+    background-image: linear-gradient(#171717, rgba(0, 0, 0, 0));
+  }
+}
+@media only screen and (min-width: 900px) and (min-height: 700px) and (min-width: 900px), only screen and (orientation: landscape) and (min-height: 700px) and (min-width: 900px) {
+  .os-download {
+    z-index: 0;
+    grid-area: page-download;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 110vh;
+    background-color: transparent;
+  }
+  .os-download section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3vw;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+  .os-download section p {
+    font-size: 14px;
+    padding: 0 0 20px;
+    padding-bottom: 20px;
+  }
+  .os-download .os-gradient {
+    display: block;
+    margin-bottom: 90vh;
+    background-image: linear-gradient(#171717, rgba(0, 0, 0, 0));
+  }
+}/*# sourceMappingURL=opensource.css.map */

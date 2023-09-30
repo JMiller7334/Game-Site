@@ -25,6 +25,8 @@ $navFontColor: white;
 $navFontSize: 20px;
 $sidebarFontSize: 25px;
 
+
+
 /* NAV MENU */
 nav{
     z-index: 104;
@@ -102,7 +104,6 @@ nav{
         }
     }
 }
-
 /* SIDEBAR MENU */
 #buttonToggleSidebar {
     z-index: 105;
@@ -124,7 +125,6 @@ nav{
         color: $navAccent;
     }
 }
-
 .sidebar {
     z-index: 100;
     position: fixed;
@@ -162,82 +162,24 @@ nav{
         width: 95%;
      }
 }
-
-
 footer{
-    //ANIMATION//
+    z-index: 110;
     opacity: 0;
-    //animation: animNavFade 0.5s linear 3.2s 1 normal forwards;
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas: 'social';
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 10px;
 
     position: fixed;
-    bottom: 0%;
-    left: 0%;
+    right: 0;
+    bottom: 10px;
+
+    padding: 10px;
 
     width: auto;
-    height: 7vh;
-    min-height: 50px;
-    z-index: 110;
-    margin-left: 10px;
-    //pointer-events: none;
-
-    .footerInfoContainer { // not used right now.
-        grid-area: info;
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-        align-items: center;
-        gap:20px;
-        margin: 10px;
-        p {
-            text-align: center;
-            font-family: $navFontMain;
-            color: $navFontColor;
-        }
-    }
-
-    .footerSocialContainer {
-        grid-area: social;
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-        align-items: center;
-        gap:20px;
-        margin: 10px;
-
-        p {
-            text-align: center;
-            font-family: $navFontMain;
-            color: $navFontColor;
-        }
-
-        button{
-            border: 0;
-            outline: 0;
-            color: $navButtonColor;
-            font-family: $navFontMain;
-            font-size: 25px;
-            width: 40px;
-            margin: 2px 0.5em;
-
-            &:hover {
-                transition-duration: 0.25s;
-                color: $navAccent;
-                transform: skewY(-15deg);
-            }
-            &:hover a{
-                color: $navAccent;
-            }
-
-            a{
-               text-decoration: none;
-               color: $navButtonColor; 
-            }
-        }
-    }
+    overflow: hidden;
 }
 
 //ENSURE ANCHOR TAG COLOR//
@@ -250,31 +192,28 @@ a:active {
 }
 
 
- /* RESPONSIVE -- MOBILE DESIGN */
+//Mobile Design Rules:
 @media only screen and (max-width: 900px){
     nav {
+        //border: 2px solid red;
+
         height: auto;
         width: 100vw;
         #navButton {
             height: 5vh;
-            margin: 5px;
+            margin: 0px;
+            padding-left: 5px;
+            padding-right: 5px;
             font-size: 15px;
-            width: 80px;
+            width: auto;
+            max-width: 20vw;
             border-radius: 7px;
-        }
-    }
+            text-align: center;
 
-    footer{
-        left: 0%;
-        width: 100vw;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        grid-template-areas: 'social';
-        background-color: $navColorSolid;
-        opacity: 0;
-        //backdrop-filter: blur(5px);
-        height: 50px;
-        margin-left: 0;
+            white-space: nowrap;
+
+
+        }
     }
 
     #buttonToggleSidebar {
