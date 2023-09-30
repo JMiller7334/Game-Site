@@ -37,4 +37,4 @@ Notes:
   + [React.JS Game Website Rebuild](https://github.com/JMiller7334/ReactJS-Game-Website)
 
 ### Links:
-  + [Offical Website](https://themeparkproject.com/)
+  + [Official Website](https://themeparkproject.com/)
