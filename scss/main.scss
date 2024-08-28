@@ -2,7 +2,6 @@
 /*SCSS FILES*/
 @import 'reset';
 @import 'navigation';
-@import 'intro';
 
 /*FONTS*/
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap');
@@ -90,15 +89,6 @@ $bgColor: #171717;
 body{
     overflow-x: hidden;
     background-color: $bgColor;
-    animation: make-scrollbar 1s linear 4.5s 1 normal both;
-
-}
-
-//PRELOAD CONFIG
-.js-loading *,
-.js-loading *:before,
-.js-loading *:after {
-  animation-play-state: paused !important;
 }
 
 #loadingMsg{
@@ -167,8 +157,7 @@ footer{
 }
 
 .page-main-container{
-    opacity: 0;
-    animation: anim-appear 1s linear 4.5s 1 normal both;
+    opacity: 1;
     overflow: hidden;
     position: absolute;
     top: 0;
@@ -509,7 +498,7 @@ footer{
     }
     .background{
         position: absolute;
-        animation: anim-appear 1s linear 6s 1 normal both;
+        animation: anim-appear 1s linear 1s 1 normal both;
 
         display: flex;
         flex-direction: column;
