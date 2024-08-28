@@ -1,0 +1,345 @@
+/*FONTS*/
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
+@keyframes intro-animSlide {
+  0% {
+    transform: translateX(300%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes intro-animFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes intro-animOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.15;
+  }
+}
+@keyframes intro-animDuelFade {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: no;
+  }
+}
+.intro-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -100;
+  display: grid;
+  grid-template-areas: "main";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+.intro-container .intro-article {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.intro-container .intro-article img { /*main logo*/
+  z-index: -6;
+  margin-top: 38vh;
+}
+.intro-container .intro-article h5 {
+  opacity: 0;
+  animation: intro-animDuelFade 2s linear 0s 1 normal forwards;
+  z-index: -11;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 3vh;
+  color: rgb(255, 255, 255);
+}
+
+.galleryContainer {
+  margin-top: 5vh;
+  z-index: -10;
+  grid-area: main;
+  min-height: calc(95vh - constant(safe-area-inset-bottom));
+  min-height: calc(95vh - env(safe-area-inset-bottom));
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "top" "mid1" "mid2" "low";
+  row-gap: 0px;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+}
+.galleryContainer .row {
+  display: grid;
+  grid-template-areas: "left center right";
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+  height: 100%;
+  width: 100%;
+  row-gap: 0px;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+}
+.galleryContainer .row .overlay {
+  z-index: -5;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.galleryContainer .row .overlayFull {
+  z-index: -5;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.17;
+  width: 100%;
+  height: 100%;
+}
+.galleryContainer .row img {
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.galleryContainer .img-0pan {
+  -o-object-position: 0%;
+     object-position: 0%;
+}
+.galleryContainer .img-100pan {
+  -o-object-position: 100%;
+     object-position: 100%;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+/* --- MOBILE SPECIFIC --- */
+@media only screen and (max-width: 900px) {
+  .intro-bftb {
+    -o-object-position: 44% 50%;
+       object-position: 44% 50%;
+  }
+  .intro-pheonix {
+    -o-object-position: 5% 50%;
+       object-position: 5% 50%;
+  }
+  .intro-reaper {
+    -o-object-position: 72%;
+       object-position: 72%;
+  }
+  .intro-treehouse {
+    -o-object-position: 70%;
+       object-position: 70%;
+  }
+  .intro-endbringer {
+    -o-object-position: 70% -50px;
+       object-position: 70% -50px;
+  }
+  .intro-wyvern {
+    -o-object-position: 50% -50px;
+       object-position: 50% -50px;
+  }
+  .intro-container {
+    overflow: visible;
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .galleryContainer {
+    overflow: visible;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 33.5% 33.5% 33.5% auto;
+    grid-template-areas: "top" "mid1" "mid2" "low";
+    row-gap: 0px;
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+    scroll-snap-align: center;
+  }
+  .intro-article h5 {
+    position: absolute;
+  }
+  #gameLogo {
+    height: auto;
+    width: 17vh;
+    opacity: 0;
+    animation: intro-animFade 0.6s linear 3.5s 1 normal forwards;
+    margin-top: -14vh;
+  }
+  .overlay {
+    animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
+  }
+  #top img {
+    transform: translateX(300%);
+    animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
+  }
+  #mid1 img {
+    transform: translateX(300%);
+    animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
+  }
+  #mid2 img {
+    transform: translateX(300%);
+    animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
+  }
+  .intro-container {
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+  .intro-container .intro-article {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  .intro-container .intro-article img { /*main logo*/
+    margin-bottom: 12vh;
+    width: 17%;
+  }
+  /* IDs ROWS */
+  #top {
+    grid-area: top;
+  }
+  #mid1 {
+    grid-area: mid1;
+  }
+  #mid2 {
+    grid-area: mid2;
+  }
+  #low {
+    display: none;
+  }
+  #full {
+    scroll-snap-align: center;
+  }
+  /* IDs IMGs*/
+  #row-left {
+    grid-area: left;
+  }
+  #row-center {
+    display: inline;
+    grid-area: center;
+  }
+  #row-right {
+    display: none;
+    grid-area: right;
+  }
+}
+/* --- DESKTOP/PC/Large Tablet --- */
+@media only screen and (min-width: 900px) {
+  .intro-container {
+    overflow: visible;
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .galleryContainer {
+    overflow: visible;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 33.5% 33.5% 33.5% auto;
+    grid-template-areas: "top" "mid1" "mid2" "low";
+    row-gap: 0px;
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+  .intro-article h5 {
+    position: absolute;
+  }
+  #gameLogo {
+    height: auto;
+    width: 25vh;
+    opacity: 0;
+    animation: intro-animFade 0.6s linear 3.5s 1 normal forwards;
+  }
+  .overlay {
+    animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
+  }
+  #top img {
+    transform: translateX(300%);
+    animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
+  }
+  #mid1 img {
+    transform: translateX(300%);
+    animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
+  }
+  #mid2 img {
+    transform: translateX(300%);
+    animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
+  }
+  .intro-container {
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+  .intro-container .intro-article {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  .intro-container .intro-article img { /*main logo*/
+    margin-bottom: 12vh;
+    width: 17%;
+  }
+  /* IDs ROWS */
+  #top {
+    grid-area: top;
+  }
+  #mid1 {
+    grid-area: mid1;
+  }
+  #mid2 {
+    grid-area: mid2;
+  }
+  #low {
+    display: none;
+  }
+  /* IDs IMGs*/
+  #row-left {
+    grid-area: left;
+  }
+  #row-center {
+    display: inline;
+    grid-area: center;
+  }
+  #row-right {
+    display: inline;
+    grid-area: right;
+  }
+  .intro-pheonix {
+    -o-object-position: 0%;
+       object-position: 0%;
+  }
+  .intro-soaring {
+    -o-object-position: 50%;
+       object-position: 50%;
+  }
+}/*# sourceMappingURL=intro.css.map */

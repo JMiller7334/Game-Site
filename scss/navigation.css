@@ -1,0 +1,198 @@
+/* FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
+/*VARIABLES*/
+/*font syntax
+    'Roboto', sans-serif;
+    'Caveat', cursive;
+
+    'Permanent Marker', cursive;
+    'Ubuntu', sans-serif;
+    'Ubuntu Condensed', sans-serif;
+*/
+/* NAV MENU */
+nav {
+  z-index: 104;
+  background-color: #171717;
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  grid-template-rows: 7vh;
+  grid-template-areas: "main-nav game-info-nav";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  align-items: center;
+}
+nav .nav-button-container {
+  grid-area: main-nav;
+  display: flex;
+  gap: 10px;
+  height: 100%;
+  align-items: center;
+}
+nav .nav-button-container .nav-logo-container {
+  background-color: rgb(144, 3, 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25vh 0.5vh 0.25vh 0.5vh;
+  width: 12vh;
+  height: 100%;
+  margin-right: 20px;
+}
+nav .nav-button-container .nav-logo-container img {
+  height: 90%;
+  width: auto;
+  filter: invert(100%);
+}
+nav #nav-game-info {
+  grid-area: game-info-nav;
+}
+nav #navButton {
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 1rem;
+  padding: 0;
+  height: 40px;
+  width: 7vw;
+  background-color: transparent;
+  border-radius: 2px;
+  border: 0px solid white;
+}
+nav #navButton:hover {
+  transition-duration: 0.25s;
+  background-color: transparent;
+  transform: scale(1.1);
+  border: 2px solid white;
+}
+nav #navButton:hover a {
+  transform: scale(1.1);
+}
+nav #navButton a {
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+/* SIDEBAR MENU */
+#buttonToggleSidebar {
+  z-index: 105;
+  font-family: "Ubuntu Condensed", sans-serif;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  right: 2vw;
+  font-size: 1rem;
+  height: 40px;
+  width: 9vw;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-align: center;
+  border: 0px solid rgb(255, 255, 255);
+  transition: 0.25s;
+}
+#buttonToggleSidebar:hover {
+  border: 2px solid rgb(66, 172, 254);
+  color: rgb(66, 172, 254);
+}
+
+.sidebar {
+  z-index: 100;
+  position: fixed;
+  height: 100vh;
+  width: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(27, 25, 25, 0.55);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s; /* total aimation time */
+}
+.sidebar span {
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: left;
+  padding: 5vw;
+}
+.sidebar .sidebarFooter {
+  border: 2px solid red;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  padding-top: 0;
+  font-size: 15px;
+  text-align: right;
+  width: 95%;
+}
+
+footer {
+  z-index: 110;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  padding: 10px;
+  width: auto;
+  overflow: hidden;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: white; /* Replace with your desired color value */
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 900px) {
+  nav {
+    height: auto;
+    width: 100vw;
+  }
+  nav #navButton {
+    height: 5vh;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 15px;
+    width: auto;
+    max-width: 20vw;
+    border-radius: 7px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  #buttonToggleSidebar {
+    z-index: 117;
+    transform: rotate(90deg);
+    font-size: 15px;
+    top: 50vh;
+    right: -80.5px;
+    border-radius: 0px 0px 20px 20px;
+    width: 180px;
+  }
+  #buttonToggleSidebar:hover {
+    border: 0px;
+  }
+  .sidebar {
+    top: 0;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+  }
+  .sidebar span {
+    font-size: 15px;
+    line-height: 25px;
+  }
+}/*# sourceMappingURL=navigation.css.map */

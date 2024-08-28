@@ -1,0 +1,784 @@
+/*SCSS FILES*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Ubuntu&family=Ubuntu+Condensed&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* FONTS */
+/*VARIABLES*/
+/*font syntax
+    'Roboto', sans-serif;
+    'Caveat', cursive;
+
+    'Permanent Marker', cursive;
+    'Ubuntu', sans-serif;
+    'Ubuntu Condensed', sans-serif;
+*/
+/* NAV MENU */
+nav {
+  z-index: 104;
+  background-color: #171717;
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  grid-template-rows: 7vh;
+  grid-template-areas: "main-nav game-info-nav";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  align-items: center;
+}
+nav .nav-button-container {
+  grid-area: main-nav;
+  display: flex;
+  gap: 10px;
+  height: 100%;
+  align-items: center;
+}
+nav .nav-button-container .nav-logo-container {
+  background-color: rgb(144, 3, 3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25vh 0.5vh 0.25vh 0.5vh;
+  width: 12vh;
+  height: 100%;
+  margin-right: 20px;
+}
+nav .nav-button-container .nav-logo-container img {
+  height: 90%;
+  width: auto;
+  filter: invert(100%);
+}
+nav #nav-game-info {
+  grid-area: game-info-nav;
+}
+nav #navButton {
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 1rem;
+  padding: 0;
+  height: 40px;
+  width: 7vw;
+  background-color: transparent;
+  border-radius: 2px;
+  border: 0px solid white;
+}
+nav #navButton:hover {
+  transition-duration: 0.25s;
+  background-color: transparent;
+  transform: scale(1.1);
+  border: 2px solid white;
+}
+nav #navButton:hover a {
+  transform: scale(1.1);
+}
+nav #navButton a {
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+/* SIDEBAR MENU */
+#buttonToggleSidebar {
+  z-index: 105;
+  font-family: "Ubuntu Condensed", sans-serif;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  right: 2vw;
+  font-size: 1rem;
+  height: 40px;
+  width: 9vw;
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+  text-align: center;
+  border: 0px solid rgb(255, 255, 255);
+  transition: 0.25s;
+}
+#buttonToggleSidebar:hover {
+  border: 2px solid rgb(66, 172, 254);
+  color: rgb(66, 172, 254);
+}
+
+.sidebar {
+  z-index: 100;
+  position: fixed;
+  height: 100vh;
+  width: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(27, 25, 25, 0.55);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s; /* total aimation time */
+}
+.sidebar span {
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: left;
+  padding: 5vw;
+}
+.sidebar .sidebarFooter {
+  border: 2px solid red;
+  font-family: "Ubuntu", sans-serif;
+  color: white;
+  padding-top: 0;
+  font-size: 15px;
+  text-align: right;
+  width: 95%;
+}
+
+footer {
+  z-index: 110;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 10px;
+  position: fixed;
+  right: 0;
+  bottom: 10px;
+  padding: 10px;
+  width: auto;
+  overflow: hidden;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: white; /* Replace with your desired color value */
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 900px) {
+  nav {
+    height: auto;
+    width: 100vw;
+  }
+  nav #navButton {
+    height: 5vh;
+    margin: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 15px;
+    width: auto;
+    max-width: 20vw;
+    border-radius: 7px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  #buttonToggleSidebar {
+    z-index: 117;
+    transform: rotate(90deg);
+    font-size: 15px;
+    top: 50vh;
+    right: -80.5px;
+    border-radius: 0px 0px 20px 20px;
+    width: 180px;
+  }
+  #buttonToggleSidebar:hover {
+    border: 0px;
+  }
+  .sidebar {
+    top: 0;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+  }
+  .sidebar span {
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
+/*FONTS*/
+@keyframes intro-animSlide {
+  0% {
+    transform: translateX(300%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes intro-animFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes intro-animOpacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.15;
+  }
+}
+@keyframes intro-animDuelFade {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: no;
+  }
+}
+.intro-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -100;
+  display: grid;
+  grid-template-areas: "main";
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+.intro-container .intro-article {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.intro-container .intro-article img { /*main logo*/
+  z-index: -6;
+  margin-top: 38vh;
+}
+.intro-container .intro-article h5 {
+  opacity: 0;
+  animation: intro-animDuelFade 2s linear 0s 1 normal forwards;
+  z-index: -11;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 3vh;
+  color: rgb(255, 255, 255);
+}
+
+.galleryContainer {
+  margin-top: 5vh;
+  z-index: -10;
+  grid-area: main;
+  min-height: calc(95vh - constant(safe-area-inset-bottom));
+  min-height: calc(95vh - env(safe-area-inset-bottom));
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "top" "mid1" "mid2" "low";
+  row-gap: 0px;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+}
+.galleryContainer .row {
+  display: grid;
+  grid-template-areas: "left center right";
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+  height: 100%;
+  width: 100%;
+  row-gap: 0px;
+  -moz-column-gap: 0px;
+       column-gap: 0px;
+}
+.galleryContainer .row .overlay {
+  z-index: -5;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+.galleryContainer .row .overlayFull {
+  z-index: -5;
+  background-color: rgb(0, 0, 0);
+  opacity: 0.17;
+  width: 100%;
+  height: 100%;
+}
+.galleryContainer .row img {
+  z-index: -10;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.galleryContainer .img-0pan {
+  -o-object-position: 0%;
+     object-position: 0%;
+}
+.galleryContainer .img-100pan {
+  -o-object-position: 100%;
+     object-position: 100%;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+/* --- MOBILE SPECIFIC --- */
+@media only screen and (max-width: 900px) {
+  .intro-bftb {
+    -o-object-position: 44% 50%;
+       object-position: 44% 50%;
+  }
+  .intro-pheonix {
+    -o-object-position: 5% 50%;
+       object-position: 5% 50%;
+  }
+  .intro-reaper {
+    -o-object-position: 72%;
+       object-position: 72%;
+  }
+  .intro-treehouse {
+    -o-object-position: 70%;
+       object-position: 70%;
+  }
+  .intro-endbringer {
+    -o-object-position: 70% -50px;
+       object-position: 70% -50px;
+  }
+  .intro-wyvern {
+    -o-object-position: 50% -50px;
+       object-position: 50% -50px;
+  }
+  .intro-container {
+    overflow: visible;
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .galleryContainer {
+    overflow: visible;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 33.5% 33.5% 33.5% auto;
+    grid-template-areas: "top" "mid1" "mid2" "low";
+    row-gap: 0px;
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+    scroll-snap-align: center;
+  }
+  .intro-article h5 {
+    position: absolute;
+  }
+  #gameLogo {
+    height: auto;
+    width: 17vh;
+    opacity: 0;
+    animation: intro-animFade 0.6s linear 3.5s 1 normal forwards;
+    margin-top: -14vh;
+  }
+  .overlay {
+    animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
+  }
+  #top img {
+    transform: translateX(300%);
+    animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
+  }
+  #mid1 img {
+    transform: translateX(300%);
+    animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
+  }
+  #mid2 img {
+    transform: translateX(300%);
+    animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
+  }
+  .intro-container {
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+  .intro-container .intro-article {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  .intro-container .intro-article img { /*main logo*/
+    margin-bottom: 12vh;
+    width: 17%;
+  }
+  /* IDs ROWS */
+  #top {
+    grid-area: top;
+  }
+  #mid1 {
+    grid-area: mid1;
+  }
+  #mid2 {
+    grid-area: mid2;
+  }
+  #low {
+    display: none;
+  }
+  #full {
+    scroll-snap-align: center;
+  }
+  /* IDs IMGs*/
+  #row-left {
+    grid-area: left;
+  }
+  #row-center {
+    display: inline;
+    grid-area: center;
+  }
+  #row-right {
+    display: none;
+    grid-area: right;
+  }
+}
+/* --- DESKTOP/PC/Large Tablet --- */
+@media only screen and (min-width: 900px) {
+  .intro-container {
+    overflow: visible;
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+  .galleryContainer {
+    overflow: visible;
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 33.5% 33.5% 33.5% auto;
+    grid-template-areas: "top" "mid1" "mid2" "low";
+    row-gap: 0px;
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+  .intro-article h5 {
+    position: absolute;
+  }
+  #gameLogo {
+    height: auto;
+    width: 25vh;
+    opacity: 0;
+    animation: intro-animFade 0.6s linear 3.5s 1 normal forwards;
+  }
+  .overlay {
+    animation: intro-animOpacity 0.6s linear 3.2s 1 normal forwards;
+  }
+  #top img {
+    transform: translateX(300%);
+    animation: intro-animSlide 0.6s linear 1.5s 1 normal forwards;
+  }
+  #mid1 img {
+    transform: translateX(300%);
+    animation: intro-animSlide 0.6s linear 1.75s 1 normal forwards;
+  }
+  #mid2 img {
+    transform: translateX(300%);
+    animation: intro-animSlide 0.6s linear 2s 1 normal forwards;
+  }
+  .intro-container {
+    display: grid;
+    grid-template-areas: "main";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+  }
+  .intro-container .intro-article {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  .intro-container .intro-article img { /*main logo*/
+    margin-bottom: 12vh;
+    width: 17%;
+  }
+  /* IDs ROWS */
+  #top {
+    grid-area: top;
+  }
+  #mid1 {
+    grid-area: mid1;
+  }
+  #mid2 {
+    grid-area: mid2;
+  }
+  #low {
+    display: none;
+  }
+  /* IDs IMGs*/
+  #row-left {
+    grid-area: left;
+  }
+  #row-center {
+    display: inline;
+    grid-area: center;
+  }
+  #row-right {
+    display: inline;
+    grid-area: right;
+  }
+  .intro-pheonix {
+    -o-object-position: 0%;
+       object-position: 0%;
+  }
+  .intro-soaring {
+    -o-object-position: 50%;
+       object-position: 50%;
+  }
+}
+/*FONTS*/
+/*VARIABLES*/
+@keyframes animFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body {
+  background-color: #171616;
+}
+
+h1 {
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: calc(1rem + 3vw);
+  color: white;
+}
+
+h2 {
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: calc((1rem + 3vw) / 1.5);
+  color: white;
+}
+
+h3 {
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: calc((1rem + 3vw) / 1.5);
+  color: white;
+}
+
+.license-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 7.5vh;
+  background-color: #171616;
+  height: 100vh;
+}
+.license-content h1 {
+  grid-area: title1;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 20px;
+}
+.license-content p {
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+}
+.license-content header {
+  grid-area: header;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 10px;
+  padding-left: 5%;
+  margin: 10%;
+  margin-top: 0;
+  width: 100%;
+  border-radius: 5px;
+}
+.license-content header .license-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: auto;
+}
+.license-content header .license-summary p {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.license-content header .license-summary h3 {
+  padding-bottom: 7px;
+}
+.license-content header .license-summary ul {
+  list-style: none;
+  color: white;
+}
+.license-content header .license-summary ul li {
+  font-family: "Ubuntu Condensed", sans-serif;
+  margin-bottom: 10px;
+}
+.license-content section {
+  grid-area: section;
+  padding: 5%;
+  padding-top: 0;
+  padding-bottom: 30px;
+}
+.license-content section h2 {
+  padding-bottom: 10px;
+}
+.license-content section article {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 40vh;
+  color: white;
+  font-family: "Ubuntu Condensed", sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  padding: 20px;
+  border-top-left-radius: 10px; /* Adjust the radius as needed */
+  border-bottom-left-radius: 10px; /* Adjust the radius as needed */
+  border: 2px solid white;
+}
+.license-content section .license-form {
+  z-index: 10;
+  padding: 10px;
+  padding-bottom: 0;
+  height: auto;
+  min-height: 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.license-content section .license-form label {
+  color: white;
+  padding-right: 20px;
+}
+.license-content .license-footer {
+  grid-area: footer;
+  bottom: 25px;
+  width: 100%;
+  padding-left: 25px;
+  padding-bottom: 25px;
+  color: white;
+  font-family: "Ubuntu Condensed", sans-serif;
+  font-size: 14px;
+}
+
+.download-button {
+  opacity: 0;
+  animation: intro-animFade 0.7s linear 0s 1 normal forwards;
+  height: 35px;
+  min-height: 40px;
+  z-index: 30;
+  display: none;
+  border-radius: 7px;
+  border: none;
+  background: #9c0404;
+  color: white;
+  font-family: "Ubuntu Condensed", sans-serif;
+  text-align: center;
+  font-size: 13px;
+  width: 200px;
+  padding: 1em;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+.download-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s;
+}
+.download-button span:after {
+  content: "zip.file(20kb)";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -50px;
+  transition: 0.7s;
+}
+.download-button:hover span {
+  padding-right: 70px;
+}
+.download-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+@media only screen and (min-width: 900px), only screen and (orientation: landscape) {
+  .license-content {
+    padding-left: 25vw;
+    padding-right: 25vw;
+  }
+}/*# sourceMappingURL=license.css.map */

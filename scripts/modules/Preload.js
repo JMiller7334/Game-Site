@@ -22,4 +22,4 @@ setTimeout(function() {
     // Code to be executed after the delay
     console.log("preload.js: timed out on load; running anim...");
     showPage();
-  }, 9000); // 3000 milliseconds = 5 seconds
+  }, 0); // 3000 milliseconds = 5 seconds

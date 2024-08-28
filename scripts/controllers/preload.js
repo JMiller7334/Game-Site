@@ -13,6 +13,7 @@ function showPage() {
     if (loadComplete === false){
         loadComplete = true;
         document.body.classList.remove("js-loading");
+        document.body.classList.remove('intro-container')
         document.getElementById("loadingMsg").remove();
         console.log("preload.js: preload class removed");
     }
@@ -22,4 +23,4 @@ setTimeout(function() {
     // Code to be executed after the delay
     console.log("preload.js: timed out on load; running anim...");
     showPage();
-  }, 9000); // 3000 milliseconds = 5 seconds
+  }, 50); // 3000 milliseconds = 5 seconds
